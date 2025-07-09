@@ -20,7 +20,7 @@ public class DealDamage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && health != 0)
         {
-            health -= damage;
+            health = Mathf.Max(0, health - damage);
             Debug.LogError($"Target HP: {health}");
         }
         else if (Input.GetKeyDown(KeyCode.E))
