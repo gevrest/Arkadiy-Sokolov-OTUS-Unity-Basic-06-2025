@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthComponent : MonoBehaviour
 {
 
-    public int health;
+    public int health = 100;
     private bool isDead = false;
 
     public void DealDamage(int damage)
