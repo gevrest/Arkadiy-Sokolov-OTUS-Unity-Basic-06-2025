@@ -10,12 +10,12 @@ public class CharacterComponent : MonoBehaviour
 
     private void OnValidate()
     {
-        CharacterDefinition();
+        CharacterDefinition(isEnemy);
     }
 
-    public void CharacterDefinition()
+    public void CharacterDefinition(bool Enemy)
     {
-        if (isEnemy)
+        if (Enemy)
         {
             character.GetComponent<MeshRenderer>().material.color = Color.red;
             character.name = "Enemy";
