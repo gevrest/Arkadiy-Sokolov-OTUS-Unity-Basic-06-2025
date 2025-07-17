@@ -10,13 +10,13 @@ public class CharacterSpawner : MonoBehaviour
     public Transform spawner;
     public GameObject prefab;
 
-    public CharacterComponent characterComponent;
+    //public CharacterComponent characterComponent;
 
     void Start()
     {
         for (int i = 0; i < characterQuantity; i++)
         {
-            var character = Instantiate(prefab, new Vector3(spawner.position.x + i, spawner.position.y, spawner.position.z), Quaternion.identity);
+            var character = Instantiate(prefab, new Vector3(spawner.position.x + i, spawner.position.y, spawner.position.z), Quaternion.identity, spawner);
             character.gameObject.SetActive(true);
         }
     }

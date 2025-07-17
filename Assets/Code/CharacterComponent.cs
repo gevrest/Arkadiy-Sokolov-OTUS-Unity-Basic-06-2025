@@ -17,12 +17,12 @@ public class CharacterComponent : MonoBehaviour
     {
         if (Enemy)
         {
-            character.GetComponent<MeshRenderer>().material.color = Color.red;
+            character.GetComponent<Renderer>().material.color = Color.red;
             character.name = "Enemy";
         }
         else
         {
-            character.GetComponent<MeshRenderer>().material.color = Color.blue;
+            character.GetComponent<Renderer>().material.color = Color.blue;
             character.name = "Ally";
         }
     }
