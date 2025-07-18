@@ -1,53 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour
+namespace Health
 {
-
-    public int maxHealth = 100;
-    public int health = 100;
-    public int damage = 10;
-
-    private bool isDead = false;
-
-    // Start is called before the first frame update
-    void Start()
+    public class HealthComponent : MonoBehaviour
     {
-        Debug.Log($"Press E to deal {damage} damage to the target. The target has {health} HP.");
-    }
+        public int MaxHealth = 100;
+        public int Health = 100;
+        public int Damage = 10;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && !isDead)
+        private bool _isDead = false;
+
+        private void Start()
         {
-            DealDamage();
+            Debug.Log($"Press E to deal {Damage} damage to the target. The target has {Health} HP.");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isDead)
+        private void Update()
         {
-            RecoverTarget();
+            if (Input.GetKeyDown(KeyCode.E) && !_isDead)
+            {
+                DealDamage();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && _isDead)
+            {
+                RecoverTarget();
+            }
+        }
+
+        public void DealDamage()
+        {
+            Health = Mathf.Max(0, Health - Damage);
+            Debug.LogError($"Target HP: {Health}");
+
+            if (Health == 0)
+            {
+                _isDead = true;
+                Debug.LogWarning("The target was destroyed. Press space to recover the target");
+            }
+        }
+
+        public void RecoverTarget()
+        {
+            Health = MaxHealth;
+            _isDead = false;
+            Debug.Log($"The target was recovered and has {Health} HP.");
         }
     }
-
-    public void DealDamage()
-    {
-        health = Mathf.Max(0, health - damage);
-        Debug.LogError($"Target HP: {health}");
-
-        if (health == 0)
-        {
-            isDead = true;
-            Debug.LogWarning("The target was destroyed. Press space to recover the target");            
-        }
-    }
-
-    public void RecoverTarget()
-    {
-        health = maxHealth;
-        isDead = false;
-        Debug.Log($"The target was recovered and has {health} HP.");
-    }
-
 }
