@@ -1,30 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterComponent : MonoBehaviour
+namespace Character
 {
-
-    public bool isEnemy;
-    public GameObject character;
-
-    private void OnValidate()
+    public class CharacterComponent : MonoBehaviour
     {
-        CharacterDefinition(isEnemy);
-    }
+        public bool IsEnemy;
+        public GameObject Character;
 
-    public void CharacterDefinition(bool Enemy)
-    {
-        if (Enemy)
+        private void OnValidate()
         {
-            character.GetComponent<Renderer>().material.color = Color.red;
-            character.name = "Enemy";
+            CharacterDefinition(IsEnemy);
         }
-        else
+
+        private void CharacterDefinition(bool enemy)
         {
-            character.GetComponent<Renderer>().material.color = Color.blue;
-            character.name = "Ally";
+            if (enemy)
+            {
+                Character.GetComponent<Renderer>().material.color = Color.red;
+                Character.name = "Enemy";
+            }
+            else
+            {
+                Character.GetComponent<Renderer>().material.color = Color.blue;
+                Character.name = "Ally";
+            }
         }
     }
-
 }

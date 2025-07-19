@@ -1,25 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour
+namespace Character
 {
-
-    public int health = 100;
-    private bool isDead = false;
-
-    public void DealDamage(int damage)
+    public class HealthComponent : MonoBehaviour
     {
-        if (!isDead)
-        {
-            health = Mathf.Max(0, health - damage);
-        }
+        public int Health = 100;
+        private bool _isDead = false;
 
-        if (health == 0)
+        private void DealDamage(int damage)
         {
-            isDead = true;
-            Destroy(gameObject);
+            if (!_isDead)
+            {
+                Health = Mathf.Max(0, Health - damage);
+            }
+
+            if (Health == 0)
+            {
+                _isDead = true;
+                Destroy(gameObject);
+            }
         }
     }
-
 }

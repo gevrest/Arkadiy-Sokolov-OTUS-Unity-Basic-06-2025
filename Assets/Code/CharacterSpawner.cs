@@ -1,24 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSpawner : MonoBehaviour
+namespace Character
 {
-
-    public int characterQuantity = 5;
-
-    public Transform spawner;
-    public GameObject prefab;
-
-    //public CharacterComponent characterComponent;
-
-    void Start()
+    public class CharacterSpawner : MonoBehaviour
     {
-        for (int i = 0; i < characterQuantity; i++)
+        public int CharacterQuantity = 5;
+        public Transform Spawner;
+        public GameObject Prefab;
+
+        private void Start()
         {
-            var character = Instantiate(prefab, new Vector3(spawner.position.x + i, spawner.position.y, spawner.position.z), Quaternion.identity, spawner);
-            character.gameObject.SetActive(true);
+            for (int i = 0; i < CharacterQuantity; i++)
+            {
+                var character = Instantiate(Prefab, new Vector3(Spawner.position.x + i, Spawner.position.y, Spawner.position.z), Quaternion.identity, Spawner);
+                character.gameObject.SetActive(true);
+            }
         }
     }
-
 }
