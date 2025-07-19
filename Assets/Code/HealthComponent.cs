@@ -28,7 +28,7 @@ namespace Health
             }
         }
 
-        public void DealDamage()
+        private void DealDamage()
         {
             Health = Mathf.Max(0, Health - Damage);
             Debug.LogError($"Target HP: {Health}");
@@ -40,7 +40,7 @@ namespace Health
             }
         }
 
-        public void RecoverTarget()
+        private void RecoverTarget()
         {
             Health = MaxHealth;
             _isDead = false;
