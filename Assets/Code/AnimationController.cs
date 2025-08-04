@@ -6,6 +6,11 @@ namespace Game
     {
         [SerializeField] private Animator _animator;
 
+        private void Start()
+        {
+            Debug.Log("Press [Space] to jump");
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
