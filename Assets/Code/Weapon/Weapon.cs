@@ -4,103 +4,51 @@ namespace Game
 {
     public class Weapon : MonoBehaviour
     {
-        [SerializeField] private Transform _barrel;
-        [SerializeField] private Rocket _rocket;
-        [SerializeField] private int _countInClip;
-        [SerializeField] private float _force;
-        [SerializeField] private float _shotDelay;
+        [SerializeField] private Transform _shootPoint;
+        [SerializeField] private int _ammo;
+        [SerializeField] private int _maxAmmo;
+        [SerializeField] private int _damage;
+        [SerializeField] private float _shootDelay;
 
-        private Transform _rocketRoot;
-        private Rocket[] _rockets;
+        private bool _canShoot;
+        private float _lastShootTime;
 
-        private void Start()
+        private void Update()
         {
-            _rocketRoot = new GameObject("Rocket Root").transform;
-            Reload();
+            _canShoot = _shootDelay <= _lastShootTime;
+
+            if (_canShoot)
+            {
+                return;
+            }
+            _lastShootTime += Time.deltaTime;
         }
 
         public void Fire()
         {
-            if (TryGetActiveRocket(out Rocket rocket))
+            if (!_canShoot)
             {
-                rocket.Run(_barrel.forward *  _force, _barrel.position);
-            }
-        }
-
-        private bool TryGetActiveRocket(out Rocket activeRocket)
-        {
-            int candidate = -1;
-            activeRocket = default;
-
-            if (_rockets == null)
-            {
-                return false;
+                return;
             }
 
-            for (int i = 0; i < _countInClip; i++)
+            if (_ammo > 0)
             {
-                Rocket rocket = _rockets[i];
+                _ammo -= 1;
 
-                if (rocket == null)
+                if (Physics.Raycast(_shootPoint.position, _shootPoint.forward, out var hitInfo))
                 {
-                    continue;
+                    if (hitInfo.collider.TryGetComponent(out HealthComponent healthComponent))
+                    {
+                        healthComponent.DealDamage(_damage);
+                    }
+                    Debug.Log(hitInfo.collider.name);
                 }
-
-                if (rocket.IsActive)
-                {
-                    return true;
-                }
-
-                candidate = i;
-                break;
             }
-
-            if (candidate == -1)
-            {
-                return false;
-            }
-
-            activeRocket = _rockets[candidate];
-            return true;
         }
 
         public void Reload()
         {
-            if (IsAnyActiveRocket())
-            {
-                return;
-            }
-            _rockets = new Rocket[_countInClip];
-            for (int i = 0; i < _countInClip; i++)
-            {
-                Rocket rocket = Instantiate(_rocket, _rocketRoot);
-                rocket.Sleep();
-                _rockets[i] = rocket;
-            }
-        }
-
-        private bool IsAnyActiveRocket()
-        {
-            if (_rockets == null)
-            {
-                return false;
-            }
-
-            for (int i = 0; i < _countInClip; i++)
-            {
-                Rocket rocket = _rockets[i];
-
-                if (rocket == null)
-                {
-                    continue;
-                }
-
-                if (rocket.IsActive)
-                {
-                       return true;
-                }
-            }
-            return false;
+            _ammo = _maxAmmo;
         }
     }
 }
