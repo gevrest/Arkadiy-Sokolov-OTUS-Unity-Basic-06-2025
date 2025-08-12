@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Game
@@ -10,6 +11,8 @@ namespace Game
         public void DealDamage(int damage)
         {
             _health = Mathf.Max(0, _health - damage);
+            StartCoroutine(DamageEffect());
+
             if (_health <= 0)
             {
                 Death();
@@ -21,9 +24,18 @@ namespace Game
             _health = Mathf.Min(_maxHealth, _health + healing);
         }
 
-        public void Death()
+        private void Death()
         {
             Destroy(gameObject);
+        }
+
+        private IEnumerator DamageEffect()
+        {
+            var renderer = gameObject.GetComponent<Renderer>();
+
+            renderer.material.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            renderer.material.color = Color.white;
         }
     }
 }

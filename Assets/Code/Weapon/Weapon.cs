@@ -17,11 +17,10 @@ namespace Game
         {
             _canShoot = _shootDelay <= _lastShootTime;
 
-            if (_canShoot)
+            if (!_canShoot)
             {
-                return;
+                _lastShootTime += Time.deltaTime;
             }
-            _lastShootTime += Time.deltaTime;
         }
 
         public void Fire()
@@ -34,6 +33,9 @@ namespace Game
             if (_ammo > 0)
             {
                 _ammo -= 1;
+                _lastShootTime = 0f;
+
+                Debug.DrawRay(_shootPoint.position, _shootPoint.forward, Color.red);
 
                 if (Physics.Raycast(_shootPoint.position, _shootPoint.forward, out var hitInfo))
                 {
@@ -41,7 +43,6 @@ namespace Game
                     {
                         healthComponent.DealDamage(_damage);
                     }
-                    Debug.Log(hitInfo.collider.name);
                 }
             }
         }
