@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionRadius: 10
   _explosionForce: 750
-  _damage: 10
+  _damage: 25
 --- !u!33 &4150569759662842144
 MeshFilter:
   m_ObjectHideFlags: 0

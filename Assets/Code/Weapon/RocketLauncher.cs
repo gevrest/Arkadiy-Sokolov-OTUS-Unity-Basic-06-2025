@@ -9,7 +9,6 @@ namespace Game
         [SerializeField] private float _force;
 
         private Rocket _rocket;
-        private bool _canShoot;
 
         private void Start()
         {
