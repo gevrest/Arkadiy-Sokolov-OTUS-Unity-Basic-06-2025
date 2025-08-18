@@ -1634,7 +1634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d1772da7243ed94c862829b2a8f52c9, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8102123548303249793, guid: 3d1772da7243ed94c862829b2a8f52c9, type: 3}
       propertyPath: m_CastShadows
@@ -1674,7 +1674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3d1772da7243ed94c862829b2a8f52c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3420036788222831862, guid: 3d1772da7243ed94c862829b2a8f52c9, type: 3}
       propertyPath: m_CastShadows
@@ -2505,7 +2505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cca4052a5e954f4bafc5f87d3ea863c, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8330899015652042342, guid: 3cca4052a5e954f4bafc5f87d3ea863c, type: 3}
       propertyPath: m_Layer
@@ -2537,7 +2537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3cca4052a5e954f4bafc5f87d3ea863c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1129525959662003139, guid: 3cca4052a5e954f4bafc5f87d3ea863c, type: 3}
       propertyPath: m_Layer
@@ -5439,10 +5439,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 2109679511}
+  _automaticRifleData: {fileID: 11400000, guid: c1840c1166225f24aa8adf8b49f2b568, type: 2}
+  _level: 1
   _ammo: 30
-  _maxAmmo: 30
-  _damage: 10
-  _shootDelay: 0.1
 --- !u!1 &1518048053
 GameObject:
   m_ObjectHideFlags: 0
@@ -7668,7 +7667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012262690}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 0.475, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8215,4 +8214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce894edff15d3646b6ac7f8f7ffa7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 1204026675}
+  _weapon: {fileID: 1483507220}

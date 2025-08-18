@@ -1,17 +1,33 @@
 using UnityEngine;
+using static Game.AutomaticRifleData;
 
 namespace Game
 {
     public sealed class AutomaticRifle : Weapon
     {
         [SerializeField] private Transform _shootPoint;
+        [SerializeField] private AutomaticRifleData _automaticRifleData;
+        [SerializeField] private int _level = 1;
         [SerializeField] private int _ammo;
-        [SerializeField] private int _maxAmmo;
-        [SerializeField] private int _damage;
-        [SerializeField] private float _shootDelay;
 
+        private UpgradeData _upgradeData;
         private bool _canShoot;
         private float _lastShootTime;
+
+        private int _maxAmmo { get; set; }
+        private int _damage { get; set; }
+        private float _shootDelay { get; set; }
+
+
+        private void Start()
+        {
+            if (_automaticRifleData.TryGetDataByLevel(_level, out _upgradeData))
+            {
+                _maxAmmo = _upgradeData.MaxAmmo;
+                _damage = _upgradeData.Damage;
+                _shootDelay = _upgradeData.ShootDelay;
+            }
+        }
 
         private void Update()
         {

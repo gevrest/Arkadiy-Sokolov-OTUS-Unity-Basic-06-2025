@@ -6,6 +6,8 @@ namespace Game
     {
         [SerializeField] private Weapon _weapon;
 
+        private WeaponSelector _weaponSelector;
+
         private void Update()
         {
             if (Input.GetMouseButton(0))

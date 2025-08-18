@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent (typeof (Rigidbody))]
-    public class Rocket : MonoBehaviour
+    public sealed class Rocket : MonoBehaviour
     {
         [SerializeField] private float _explosionRadius;
         [SerializeField] private float _explosionForce;
