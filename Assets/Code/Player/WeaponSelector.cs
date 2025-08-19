@@ -2,23 +2,55 @@ using UnityEngine;
 
 namespace Game
 {
-    public class WeaponSelector : MonoBehaviour
+    public sealed class WeaponSelector
     {
-        private int _weaponIndex;
+        private readonly Weapon[] _weapons;
+        private int _currentIndex;
+        private Weapon _currentWeapon;
+
+        public WeaponSelector(Weapon[] weapons)
+        {
+            _weapons = weapons;
+            for (int i = 0; i < _weapons.Length; i++)
+            {
+                Weapon weapon = _weapons[i];
+                weapon.SetActive(false);
+            }
+        }
 
         public void NextWeapon()
         {
+            _currentIndex++;
             SelectWeapon();
         }
 
         public void PreviosWeapon()
         {
+            _currentIndex--;
             SelectWeapon();
         }
 
-        private void SelectWeapon()
+        public void SelectWeapon()
         {
+            if (_currentWeapon != null)
+            {
+                _currentWeapon.SetActive(false);
+            }
 
+            int index = Mathf.Abs(_currentIndex % _weapons.Length);
+
+            _currentWeapon = _weapons[index];
+            _currentWeapon.SetActive(true);
+        }
+
+        public void Fire()
+        {
+            _currentWeapon.Fire();
+        }
+
+        public void Reload()
+        {
+            _currentWeapon.Reload();
         }
     }
 }
