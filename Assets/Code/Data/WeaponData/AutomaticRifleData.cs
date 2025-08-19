@@ -3,14 +3,13 @@ using UnityEngine;
 
 namespace Game
 {
-    [CreateAssetMenu(fileName = "AutomaticRifle", menuName = "Data/Weapon Upgrade Data/Automatic Rifle", order = 0)]
+    [CreateAssetMenu(fileName = "AutomaticRifle", menuName = "Data/Weapon Data/Automatic Rifle", order = 0)]
     public sealed class AutomaticRifleData : ScriptableObject
     {
         [Serializable]
         public sealed class UpgradeData
         {
             public int Level;
-
             public int MaxAmmo;
             public int Damage;
             public float ShootDelay;

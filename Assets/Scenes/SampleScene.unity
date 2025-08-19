@@ -5440,7 +5440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 2109679511}
   _automaticRifleData: {fileID: 11400000, guid: c1840c1166225f24aa8adf8b49f2b568, type: 2}
-  _level: 1
+  _level: 3
   _ammo: 30
 --- !u!1 &1518048053
 GameObject:

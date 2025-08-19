@@ -11,9 +11,9 @@ namespace Game
         [SerializeField] private int _ammo;
 
         private UpgradeData _upgradeData;
-        private bool _canShoot;
         private float _lastShootTime;
 
+        private bool _canShoot { get; set; }
         private int _maxAmmo { get; set; }
         private int _damage { get; set; }
         private float _shootDelay { get; set; }
@@ -27,6 +27,7 @@ namespace Game
                 _damage = _upgradeData.Damage;
                 _shootDelay = _upgradeData.ShootDelay;
             }
+            Reload();
         }
 
         private void Update()
