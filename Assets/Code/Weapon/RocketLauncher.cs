@@ -35,7 +35,7 @@ namespace Game
 
         public override void ReleaseTrigger()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

@@ -14,6 +14,11 @@ namespace Game
         private float _lastShootTime;
         private bool _canShoot;
 
+        private void Start()
+        {
+            ReleaseTrigger();
+        }
+
         private void Update()
         {
             _canShoot = _shootDelay <= _lastShootTime;

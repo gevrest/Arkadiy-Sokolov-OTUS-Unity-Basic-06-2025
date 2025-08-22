@@ -12,6 +12,11 @@ namespace Game
         private float _lastAttackTime;
         private bool _canAttack;
 
+        private void Start()
+        {
+            
+        }
+
         private void Update()
         {
             _canAttack = _attackCooldown <= _lastAttackTime;
@@ -46,7 +51,7 @@ namespace Game
 
         public override void ReleaseTrigger()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
