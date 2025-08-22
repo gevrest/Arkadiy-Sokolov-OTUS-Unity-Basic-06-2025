@@ -8933,7 +8933,7 @@ MonoBehaviour:
   _attackPosition: {fileID: 2109679511}
   _damage: 25
   _attackDistance: 3
-  _attackCooldown: 1
+  _attackCooldown: 0.8
 --- !u!23 &3473734064496443453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9191,6 +9191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8c5aeede5f8e141901a0a06ef0225e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shootPosition: {fileID: 2109679511}
+  _ammo: 15
+  _maxAmmo: 15
+  _damage: 10
+  _shootDelay: 0.3
 --- !u!1 &4320886225654638591
 GameObject:
   m_ObjectHideFlags: 0

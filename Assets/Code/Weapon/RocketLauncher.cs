@@ -32,5 +32,10 @@ namespace Game
                 _rocket.Sleep();
             }
         }
+
+        public override void ReleaseTrigger()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

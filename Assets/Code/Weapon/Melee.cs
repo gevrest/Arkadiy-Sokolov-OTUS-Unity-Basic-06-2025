@@ -9,8 +9,8 @@ namespace Game
         [SerializeField] float _attackDistance;
         [SerializeField] float _attackCooldown;
 
-        private bool _canAttack;
         private float _lastAttackTime;
+        private bool _canAttack;
 
         private void Update()
         {
@@ -42,6 +42,11 @@ namespace Game
         public override void Reload()
         {
             
+        }
+
+        public override void ReleaseTrigger()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

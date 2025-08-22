@@ -32,6 +32,11 @@ namespace Game
                 _weaponSelector.Fire();
             }
 
+            if (Input.GetMouseButtonUp(0))
+            {
+                _weaponSelector.ReleaseTrigger();
+            }
+
             if (Input.GetKeyDown(KeyCode.R))
             {
                 _weaponSelector.Reload();

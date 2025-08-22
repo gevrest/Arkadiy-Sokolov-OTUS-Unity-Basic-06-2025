@@ -52,5 +52,10 @@ namespace Game
         {
             _currentWeapon.Reload();
         }
+
+        public void ReleaseTrigger()
+        {
+            _currentWeapon.ReleaseTrigger();
+        }
     }
 }

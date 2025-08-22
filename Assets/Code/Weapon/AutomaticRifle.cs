@@ -10,13 +10,15 @@ namespace Game
         [SerializeField] private int _level = 1;
         [SerializeField] private int _ammo;
 
-        private UpgradeData _upgradeData;
-        private float _lastShootTime;
-        private bool _canShoot;
+        #region
         private int _maxAmmo;
         private int _damage;
         private float _shootDelay;
+        #endregion
 
+        private UpgradeData _upgradeData;
+        private float _lastShootTime;
+        private bool _canShoot;
 
         private void Start()
         {
@@ -63,6 +65,11 @@ namespace Game
         public override void Reload()
         {
             _ammo = _maxAmmo;
+        }
+
+        public override void ReleaseTrigger()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
