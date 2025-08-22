@@ -1,8 +1,6 @@
-using UnityEngine;
-
 namespace Game
 {
-    public class WeaponSelector : MonoBehaviour
+    public class WeaponSelector
     {
         private int _weaponIndex;
 

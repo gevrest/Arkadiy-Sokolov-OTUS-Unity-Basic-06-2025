@@ -12,11 +12,10 @@ namespace Game
 
         private UpgradeData _upgradeData;
         private float _lastShootTime;
-
-        private bool _canShoot { get; set; }
-        private int _maxAmmo { get; set; }
-        private int _damage { get; set; }
-        private float _shootDelay { get; set; }
+        private bool _canShoot;
+        private int _maxAmmo;
+        private int _damage;
+        private float _shootDelay;
 
 
         private void Start()
