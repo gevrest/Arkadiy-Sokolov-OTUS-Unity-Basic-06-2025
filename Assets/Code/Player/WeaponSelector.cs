@@ -5,7 +5,7 @@ namespace Game
     public sealed class WeaponSelector
     {
         private readonly Weapon[] _weapons;
-        private int _currentIndex;
+        private int _currentIndex = 0;
         private Weapon _currentWeapon;
 
         public WeaponSelector(Weapon[] weapons)

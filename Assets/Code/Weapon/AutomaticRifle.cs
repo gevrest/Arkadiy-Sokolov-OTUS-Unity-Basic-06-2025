@@ -48,9 +48,6 @@ namespace Game
 
             if (_ammo > 0)
             {
-                _ammo -= 1;
-                _lastShootTime = 0f;
-
                 if (Physics.Raycast(_shootPoint.position, _shootPoint.forward, out var hitInfo))
                 {
                     if (hitInfo.collider.TryGetComponent(out HealthComponent healthComponent))
@@ -58,6 +55,8 @@ namespace Game
                         healthComponent.DealDamage(_damage);
                     }
                 }
+                _ammo -= 1;
+                _lastShootTime = 0f;
             }
         }
 

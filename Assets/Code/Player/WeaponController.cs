@@ -10,6 +10,8 @@ namespace Game
         {
             Weapon[] weapons = GetComponentsInChildren<Weapon>(true);
             _weaponSelector = new WeaponSelector(weapons);
+
+            _weaponSelector.SelectWeapon();
         }
 
         private void Update()
