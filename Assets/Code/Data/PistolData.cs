@@ -1,22 +1,21 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Game
 {
-    [CreateAssetMenu(fileName = "NewAutomaticRifleData", menuName = "Data/Weapon Data/Automatic Rifle", order = 0)]
-    public sealed class AutomaticRifleData : ScriptableObject
+    [CreateAssetMenu(fileName = "NewPistolData", menuName = "Data/Weapon Data/Pistol", order = 1)]
+    public sealed class PistolData : ScriptableObject
     {
         [Serializable]
-        public sealed class ARUpgradeData : UpgradeData
+        public sealed class PistolUpgradeData : UpgradeData
         {
             public int MaxAmmo;
             public int Damage;
-            public float ShootDelay;
         }
 
-        [SerializeField] private ARUpgradeData[] _upgradeData;
+        [SerializeField] private PistolUpgradeData[] _upgradeData;
 
-        public bool TryGetDataByLevel(int level, out ARUpgradeData upgradeData)
+        public bool TryGetDataByLevel(int level, out PistolUpgradeData upgradeData)
         {
             for (int i = 0; i < _upgradeData.Length; i++)
             {

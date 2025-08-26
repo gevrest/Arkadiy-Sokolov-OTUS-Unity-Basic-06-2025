@@ -1,22 +1,22 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Game
 {
-    [CreateAssetMenu(fileName = "NewAutomaticRifleData", menuName = "Data/Weapon Data/Automatic Rifle", order = 0)]
-    public sealed class AutomaticRifleData : ScriptableObject
+    [CreateAssetMenu(fileName = "NewMeleeData", menuName = "Data/Weapon Data/Melee", order = 2)]
+    public sealed class MeleeData : ScriptableObject
     {
         [Serializable]
-        public sealed class ARUpgradeData : UpgradeData
+        public sealed class MeleeUpgradeData : UpgradeData
         {
-            public int MaxAmmo;
             public int Damage;
-            public float ShootDelay;
+            public float AttackDistance;
+            public float AttackCooldown;
         }
 
-        [SerializeField] private ARUpgradeData[] _upgradeData;
+        [SerializeField] private MeleeUpgradeData[] _upgradeData;
 
-        public bool TryGetDataByLevel(int level, out ARUpgradeData upgradeData)
+        public bool TryGetDataByLevel(int level, out MeleeUpgradeData upgradeData)
         {
             for (int i = 0; i < _upgradeData.Length; i++)
             {

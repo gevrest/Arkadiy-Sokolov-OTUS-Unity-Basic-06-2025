@@ -3,10 +3,10 @@ using static Game.AutomaticRifleData;
 
 namespace Game
 {
-    public sealed class AutomaticRifle : Weapon
+    public sealed class AutomaticRifle : Weapon, IReloadable
     {
         [SerializeField] private Transform _shootPoint;
-        [SerializeField] private AutomaticRifleData _automaticRifleData;
+        [SerializeField] private AutomaticRifleData _weaponData;
         [SerializeField] private int _level = 1;
         [SerializeField] private int _ammo;
 
@@ -16,13 +16,13 @@ namespace Game
         private float _shootDelay;
         #endregion
 
-        private UpgradeData _upgradeData;
+        private ARUpgradeData _upgradeData;
         private float _lastShootTime;
         private bool _canShoot;
 
         private void Start()
         {
-            if (_automaticRifleData.TryGetDataByLevel(_level, out _upgradeData))
+            if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
             {
                 _maxAmmo = _upgradeData.MaxAmmo;
                 _damage = _upgradeData.Damage;
@@ -62,14 +62,9 @@ namespace Game
             }
         }
 
-        public override void Reload()
+        public void Reload()
         {
             _ammo = _maxAmmo;
-        }
-
-        public override void ReleaseTrigger()
-        {
-            
         }
     }
 }

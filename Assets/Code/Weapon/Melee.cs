@@ -1,20 +1,32 @@
 ﻿using UnityEngine;
+using static Game.MeleeData;
 
 namespace Game
 {
     public class Melee : Weapon
     {
-        [SerializeField] Transform _attackPosition;
-        [SerializeField] int _damage;
-        [SerializeField] float _attackDistance;
-        [SerializeField] float _attackCooldown;
+        [SerializeField] private Transform _attackPosition;
+        [SerializeField] private MeleeData _weaponData;
+        [SerializeField] private int _level = 1;
 
+        #region
+        private int _damage;
+        private float _attackDistance;
+        private float _attackCooldown;
+        #endregion
+
+        private MeleeUpgradeData _upgradeData;
         private float _lastAttackTime;
         private bool _canAttack;
 
         private void Start()
         {
-            
+            if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
+            {
+                _damage = _upgradeData.Damage;
+                _attackDistance = _upgradeData.AttackDistance;
+                _attackCooldown = _upgradeData.AttackCooldown;
+            }
         }
 
         private void Update()
@@ -42,16 +54,6 @@ namespace Game
                 }
             }
             _lastAttackTime = 0f;
-        }
-
-        public override void Reload()
-        {
-            
-        }
-
-        public override void ReleaseTrigger()
-        {
-            
         }
     }
 }

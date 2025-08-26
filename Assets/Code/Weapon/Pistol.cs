@@ -1,21 +1,34 @@
 ﻿using UnityEngine;
+using static Game.PistolData;
 
 namespace Game
 {
-    public sealed class Pistol : Weapon
+    public sealed class Pistol : Weapon, IReloadable, IReleasable
     {
         [SerializeField] private Transform _shootPosition;
-        [SerializeField] private int _ammo;
-        [SerializeField] private int _maxAmmo;
-        [SerializeField] private int _damage;
+        [SerializeField] private PistolData _weaponData;
+        [SerializeField] private int _level = 1;
         [SerializeField] private float _shootDelay;
+        [SerializeField] private int _ammo;
 
-        private bool _released;
+        #region
+        private int _maxAmmo;
+        private int _damage;
+        #endregion
+
+        private PistolUpgradeData _upgradeData;
         private float _lastShootTime;
+        private bool _released;        
         private bool _canShoot;
 
         private void Start()
         {
+            if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
+            {
+                _maxAmmo = _upgradeData.MaxAmmo;
+                _damage = _upgradeData.Damage;
+            }
+            Reload();
             ReleaseTrigger();
         }
 
@@ -51,12 +64,12 @@ namespace Game
             }
         }
 
-        public override void Reload()
+        public void Reload()
         {
             _ammo = _maxAmmo;
         }
 
-        public override void ReleaseTrigger()
+        public void ReleaseTrigger()
         {
             _released = true;
         }

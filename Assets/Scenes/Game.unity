@@ -3323,7 +3323,7 @@ Transform:
   - {fileID: 2109679511}
   - {fileID: 543450653148401878}
   - {fileID: 3515364649808476480}
-  - {fileID: 543450652280991564}
+  - {fileID: 1531285593}
   - {fileID: 543450653237408706}
   m_Father: {fileID: 418648703}
   m_RootOrder: -1
@@ -3664,7 +3664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _barrel: {fileID: 2012262691}
   _rocketPrefab: {fileID: 4002707799942199179, guid: d2c62ecefc28d6e40acffd9d248153af, type: 3}
-  _force: 2500
+  _weaponData: {fileID: 11400000, guid: a4ca563d7316d52408cc34ef5a692532, type: 2}
+  _level: 3
 --- !u!1 &1220490868
 GameObject:
   m_ObjectHideFlags: 0
@@ -5040,7 +5041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 2109679511}
-  _automaticRifleData: {fileID: 11400000, guid: c1840c1166225f24aa8adf8b49f2b568, type: 2}
+  _weaponData: {fileID: 11400000, guid: c1840c1166225f24aa8adf8b49f2b568, type: 2}
   _level: 3
   _ammo: 30
 --- !u!1 &1518048053
@@ -5191,6 +5192,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518048053}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1531285592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531285593}
+  - component: {fileID: 1531285594}
+  m_Layer: 6
+  m_Name: Axe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1531285593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531285592}
+  m_LocalRotation: {x: 0.7010574, y: 0.7010574, z: 0.09229599, w: 0.09229599}
+  m_LocalPosition: {x: 0.5, y: -0.54999995, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 543450652280991564}
+  m_Father: {fileID: 963194228}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 165, z: 90}
+--- !u!114 &1531285594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531285592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb233d2a5b457d8468dcba9da453e2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackPosition: {fileID: 2109679511}
+  _weaponData: {fileID: 11400000, guid: 1485df2bd948dbe4396492b668e100e6, type: 2}
+  _level: 3
 --- !u!1 &1540405068
 GameObject:
   m_ObjectHideFlags: 0
@@ -7972,12 +8021,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148292253174}
-  m_LocalRotation: {x: 0.7010574, y: 0.7010574, z: 0.09229599, w: 0.09229599}
-  m_LocalPosition: {x: 0.5, y: -0.54999995, z: 0.75}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 963194228}
+  m_Father: {fileID: 1531285593}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 165, z: 90}
 --- !u!4 &543450653148401878
@@ -8210,14 +8259,13 @@ GameObject:
   - component: {fileID: 543450652280991564}
   - component: {fileID: 3469287838345240809}
   - component: {fileID: 1711813854351479843}
-  - component: {fileID: 3469287838345240810}
   m_Layer: 6
   m_Name: axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &919132148675185260
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,7 +8277,7 @@ GameObject:
   - component: {fileID: 543450653148401878}
   - component: {fileID: 1483507220}
   m_Layer: 6
-  m_Name: ak-107
+  m_Name: AK-107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8246,7 +8294,7 @@ GameObject:
   - component: {fileID: 543450653237408706}
   - component: {fileID: 1204026675}
   m_Layer: 6
-  m_Name: osa
+  m_Name: Osa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8918,22 +8966,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148292253174}
   m_Mesh: {fileID: -8176984191909879101, guid: 9ad21ff08a46cc146a167c873a2da3c2, type: 3}
---- !u!114 &3469287838345240810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148292253174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb233d2a5b457d8468dcba9da453e2bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackPosition: {fileID: 2109679511}
-  _damage: 25
-  _attackDistance: 3
-  _attackCooldown: 0.8
 --- !u!23 &3473734064496443453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9173,7 +9205,7 @@ GameObject:
   - component: {fileID: 3515364649808476480}
   - component: {fileID: 4288206581763204091}
   m_Layer: 6
-  m_Name: beretta 92
+  m_Name: Beretta-92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9192,10 +9224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPosition: {fileID: 2109679511}
-  _ammo: 15
-  _maxAmmo: 15
-  _damage: 10
+  _weaponData: {fileID: 11400000, guid: 43f2a13c1ac2f984faf0b823655d9bcb, type: 2}
+  _level: 3
   _shootDelay: 0.3
+  _ammo: 15
 --- !u!1 &4320886225654638591
 GameObject:
   m_ObjectHideFlags: 0

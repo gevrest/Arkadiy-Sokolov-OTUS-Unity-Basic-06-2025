@@ -50,12 +50,18 @@ namespace Game
 
         public void Reload()
         {
-            _currentWeapon.Reload();
+            if (_currentWeapon is IReloadable reload)
+            {
+                reload.Reload();
+            }
         }
 
         public void ReleaseTrigger()
         {
-            _currentWeapon.ReleaseTrigger();
+            if (_currentWeapon is IReleasable release)
+            {
+                release.ReleaseTrigger();
+            }
         }
     }
 }
