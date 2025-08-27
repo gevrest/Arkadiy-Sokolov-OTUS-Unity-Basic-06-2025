@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06a84b554856560498d05b44afb6ea2f, type: 3}
-  m_Name: Osa
+  m_Name: M79-OSA
   m_EditorClassIdentifier: 
   _upgradeData:
   - Level: 1

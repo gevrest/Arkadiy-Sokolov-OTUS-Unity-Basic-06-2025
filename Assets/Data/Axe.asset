@@ -16,12 +16,12 @@ MonoBehaviour:
   - Level: 1
     Damage: 20
     AttackDistance: 1
-    AttackCooldown: 0.8
+    AttackCooldown: 1
   - Level: 2
     Damage: 25
     AttackDistance: 2
-    AttackCooldown: 0.6
+    AttackCooldown: 0.8
   - Level: 3
     Damage: 30
     AttackDistance: 3
-    AttackCooldown: 0.4
+    AttackCooldown: 0.6
