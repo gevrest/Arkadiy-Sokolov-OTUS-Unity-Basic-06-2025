@@ -16,11 +16,14 @@ namespace Game
         #endregion
 
         private MeleeUpgradeData _upgradeData;
+        private WeaponAudioSource _audioSource;
         private float _lastAttackTime;
         private bool _canAttack;
 
         private void Start()
         {
+            _audioSource = GetComponent<WeaponAudioSource>();
+
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
             {
                 _damage = _upgradeData.Damage;
@@ -52,6 +55,7 @@ namespace Game
                 {
                     healthComponent.DealDamage(_damage);
                 }
+                _audioSource.PlayShotSound();
             }
             _lastAttackTime = 0f;
         }

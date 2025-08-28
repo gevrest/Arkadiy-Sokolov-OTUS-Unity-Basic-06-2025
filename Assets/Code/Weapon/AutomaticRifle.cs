@@ -17,11 +17,14 @@ namespace Game
         #endregion
 
         private ARUpgradeData _upgradeData;
+        private WeaponAudioSource _audioSource;
         private float _lastShootTime;
         private bool _canShoot;
 
         private void Start()
         {
+            _audioSource = GetComponent<WeaponAudioSource>();
+
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
             {
                 _maxAmmo = _upgradeData.MaxAmmo;
@@ -59,6 +62,8 @@ namespace Game
                 }
                 _ammo -= 1;
                 _lastShootTime = 0f;
+
+                _audioSource.PlayShotSound();
             }
         }
 

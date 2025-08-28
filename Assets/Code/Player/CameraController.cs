@@ -9,6 +9,12 @@ namespace Game
 
         private float _rotationX = 0.0f;
 
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         private void Update()
         {
             float mouseX = Input.GetAxis("Mouse X");

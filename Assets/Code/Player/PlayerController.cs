@@ -15,9 +15,6 @@ namespace Game
         private void Start()
         {
             _controller = GetComponent<CharacterController>();
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
 
         private void Update()
@@ -26,7 +23,14 @@ namespace Game
             float verticalInput = Input.GetAxis("Vertical");
 
             Vector3 moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
-            moveDirection *= (Input.GetKey(KeyCode.LeftShift) ? _sprintSpeed : _moveSpeed);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                moveDirection *= (_sprintSpeed);
+            }
+            else
+            {
+                moveDirection *= (_moveSpeed);
+            }
 
             _velocity.y += _gravity * Time.deltaTime;
 
