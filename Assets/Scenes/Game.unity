@@ -1449,7 +1449,7 @@ MonoBehaviour:
   _stepSound: {fileID: 8300000, guid: d4b7d1e6672d7604aa9821f14ba5c1c7, type: 3}
   _stepSoundDelay: 0.6
   _sprintSoundDelay: 0.3
-  _volume: 0.5
+  _volume: 0.25
   _randomization: 0.2
 --- !u!1 &501041950
 GameObject:
@@ -4071,7 +4071,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
