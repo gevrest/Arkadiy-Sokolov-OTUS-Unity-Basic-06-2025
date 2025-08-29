@@ -1364,6 +1364,7 @@ GameObject:
   - component: {fileID: 418648703}
   - component: {fileID: 418648702}
   - component: {fileID: 418648704}
+  - component: {fileID: 418648705}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -1432,6 +1433,24 @@ MonoBehaviour:
   _sprintSpeed: 10
   _jumpForce: 0.5
   _gravity: -9.81
+--- !u!114 &418648705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418648701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5ae54ca5343004c845137beb529cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1274788341}
+  _stepSound: {fileID: 8300000, guid: d4b7d1e6672d7604aa9821f14ba5c1c7, type: 3}
+  _stepSoundDelay: 0.6
+  _sprintSoundDelay: 0.3
+  _volume: 0.5
+  _randomization: 0.1
 --- !u!1 &501041950
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,7 +5403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotSound: {fileID: 8300000, guid: b02ab038f4eda114c8d543b3d405a202, type: 3}
-  _volume: 1
+  _volume: 0.5
   _randomization: 0.1
 --- !u!1 &1540405068
 GameObject:
@@ -7464,7 +7483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970376388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -0.25, z: 1.5}
+  m_LocalPosition: {x: 0, y: -0.25, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8571,7 +8590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotSound: {fileID: 8300000, guid: 50c2394983885474997442c5fb673c54, type: 3}
-  _volume: 1
+  _volume: 0.6
   _randomization: 0.1
 --- !u!1 &919132149517068664
 GameObject:
@@ -8604,7 +8623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotSound: {fileID: 8300000, guid: ddf6ec0fb2d79834590a8c659fc942a7, type: 3}
-  _volume: 1
+  _volume: 0.24999999
   _randomization: 0.1
 --- !u!4 &926282662136720257
 Transform:

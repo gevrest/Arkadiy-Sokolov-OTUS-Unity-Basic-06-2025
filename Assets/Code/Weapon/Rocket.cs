@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent (typeof (Rigidbody))]
     public sealed class Rocket : MonoBehaviour
     {
         [SerializeField] private float _explosionRadius;
@@ -11,10 +10,16 @@ namespace Game
         [SerializeField] private int _damage;
 
         private Rigidbody _rigidbody;
+        private MeshRenderer _renderer;
+        private CapsuleCollider _collider;
+        private RocketAudioSource _audioSource;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _renderer = GetComponent<MeshRenderer>();
+            _collider = GetComponent<CapsuleCollider>();
+            _audioSource = GetComponent<RocketAudioSource>();
         }
 
         private IEnumerator Start()
@@ -27,7 +32,8 @@ namespace Game
         {
             var explosion = gameObject.AddComponent<Explosion>();
             explosion.Detonate(transform.position, _explosionRadius, _explosionForce, _damage);
-            Destroy(gameObject);
+            Disable();
+            _audioSource.PlayExplosionSound();
         }
 
         public void Strike(Vector3 path, Vector3 startPosition)
@@ -43,6 +49,13 @@ namespace Game
         {
             _rigidbody.Sleep();
             gameObject.SetActive(false);
+        }
+
+        private void Disable()
+        {
+            Destroy(_rigidbody);
+            Destroy(_renderer);
+            Destroy(_collider);
         }
     }
 }

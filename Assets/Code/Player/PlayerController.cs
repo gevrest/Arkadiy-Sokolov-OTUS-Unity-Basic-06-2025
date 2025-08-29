@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PlayerController : MonoBehaviour
+    public sealed class PlayerController : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed = 5.0f;
         [SerializeField] private float _sprintSpeed = 10.0f;
@@ -11,10 +11,12 @@ namespace Game
 
         private Vector3 _velocity;
         private CharacterController _controller;
+        private PlayerAudioSource _audioSource;
 
         private void Start()
         {
             _controller = GetComponent<CharacterController>();
+            _audioSource = GetComponent<PlayerAudioSource>();
         }
 
         private void Update()
@@ -26,10 +28,12 @@ namespace Game
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 moveDirection *= (_sprintSpeed);
+                _audioSource.SwitchToSprint();
             }
             else
             {
                 moveDirection *= (_moveSpeed);
+                _audioSource.SwitchToWalk();
             }
 
             _velocity.y += _gravity * Time.deltaTime;

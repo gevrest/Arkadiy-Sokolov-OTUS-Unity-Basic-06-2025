@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class CameraController : MonoBehaviour
+    public sealed class CameraController : MonoBehaviour
     {
         [SerializeField] private float _sensitivity = 2.0f;
         [SerializeField] private float _maxYAngle = 80.0f;
