@@ -1450,7 +1450,7 @@ MonoBehaviour:
   _stepSoundDelay: 0.6
   _sprintSoundDelay: 0.3
   _volume: 0.5
-  _randomization: 0.1
+  _randomization: 0.2
 --- !u!1 &501041950
 GameObject:
   m_ObjectHideFlags: 0
