@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   _lineData:
-  - _bricksQuantity: 2
-    _color: {r: 0.21205385, g: 0.8018868, b: 0.02017319, a: 0}
-  - _bricksQuantity: 3
-    _color: {r: 0.8, g: 0.14747371, b: 0.01960783, a: 0}
-  - _bricksQuantity: 4
-    _color: {r: 0.78234625, g: 0.8, b: 0.01960783, a: 0}
   - _bricksQuantity: 14
-    _color: {r: 0.8, g: 0.01960783, b: 0.5426396, a: 0}
+    _color: {r: 0.33009475, g: 0.6603774, b: 0.22220242, a: 0}
+  - _bricksQuantity: 14
+    _color: {r: 0.6981132, g: 0.13611005, b: 0.1805761, a: 0}
+  - _bricksQuantity: 14
+    _color: {r: 0.6760553, g: 0.6886792, b: 0.18624651, a: 0}
+  - _bricksQuantity: 14
+    _color: {r: 0.6415094, g: 0.18559389, b: 0.49030122, a: 0}
+  - _bricksQuantity: 14
+    _color: {r: 0.18624651, g: 0.5927373, b: 0.6886792, a: 0}
