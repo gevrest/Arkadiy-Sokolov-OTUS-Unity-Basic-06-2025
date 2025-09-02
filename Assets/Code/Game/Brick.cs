@@ -6,6 +6,13 @@ namespace Game
     {
         [SerializeField] private MeshRenderer _renderer;
 
+        private AudioController _audioController;
+
+        private void Start()
+        {
+            _audioController = GetComponentInParent<AudioController>();
+        }
+
         public void SetColor(Color color)
         {
             _renderer.material.color = color;
@@ -15,6 +22,7 @@ namespace Game
         {
             if (other.collider.TryGetComponent(out Ball ball))
             {
+                _audioController.PlayCollisionSound();
                 Destroy(gameObject);
             }
         }

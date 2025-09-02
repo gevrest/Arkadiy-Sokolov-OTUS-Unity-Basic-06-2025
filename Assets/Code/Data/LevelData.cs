@@ -9,6 +9,7 @@ namespace Game
         [Serializable]
         public sealed class LineData
         {
+            [Range(0, 14)]
             public int _bricksQuantity;
             public Color _color;
         }
