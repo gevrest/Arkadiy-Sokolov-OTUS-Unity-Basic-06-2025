@@ -7,6 +7,7 @@ namespace Game
         [SerializeField] AudioSource _levelAudioSource;
         [SerializeField] AudioSource _ambientAudioSource;
         [SerializeField] AudioClip _ambientClip;
+        [SerializeField] AudioClip _popClip;
         [SerializeField] AudioClip _collisionClip;
         [SerializeField] AudioClip _deathClip;
 
@@ -27,6 +28,11 @@ namespace Game
         public void PlayCollisionSound()
         {
             _levelAudioSource.PlayOneShot(_collisionClip);
+        }
+
+        public void PlayPopSound()
+        {
+            _levelAudioSource.PlayOneShot(_popClip);
         }
 
         public void PlayDeathSound()

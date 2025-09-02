@@ -8,12 +8,14 @@ namespace Game
         [SerializeField] private float _speed;
 
         private Rigidbody _rigidbody;
+        private AudioController _audioController;
         private Vector2 _direction;
         private Vector2 _startPosition;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _audioController = GetComponentInParent<AudioController>();
             _startPosition = transform.position;
         }
 
@@ -50,6 +52,7 @@ namespace Game
                 float deltaX = transform.position.x - other.transform.position.x;
                 float ratio = deltaX / other.collider.bounds.size.x;
                 SetVelocity(new Vector2(ratio, 1).normalized);
+                _audioController.PlayCollisionSound();
             }
         }
     }

@@ -175,7 +175,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -321,6 +321,7 @@ MonoBehaviour:
   _levelAudioSource: {fileID: 1204659707}
   _ambientAudioSource: {fileID: 71283442}
   _ambientClip: {fileID: 8300000, guid: dab1b795b3976774295af574eff019e9, type: 3}
+  _popClip: {fileID: 8300000, guid: 32cb889ebf1a6b047ab05593f4bc396d, type: 3}
   _collisionClip: {fileID: 8300000, guid: 572bf3fbb9c7b5b49a6eca7ebc742d22, type: 3}
   _deathClip: {fileID: 8300000, guid: 4e76cd1204bff5343a6634d15908bbe7, type: 3}
 --- !u!1 &568560429

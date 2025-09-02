@@ -22,6 +22,10 @@ namespace Game
                 _audioController.PlayDeathSound();
                 _levelController.ResetLevel();
             }
+            else
+            {
+                _audioController.PlayCollisionSound();
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Game
         {
             if (other.collider.TryGetComponent(out Ball ball))
             {
-                _audioController.PlayCollisionSound();
+                _audioController.PlayPopSound();
                 Destroy(gameObject);
             }
         }
