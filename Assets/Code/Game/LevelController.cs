@@ -24,6 +24,15 @@ namespace Game
             GenerateLevel();
         }
 
+        private void Update()
+        {
+            _bricks = _brickMain.GetComponentsInChildren<Brick>(true);
+            if (_bricks.Length == 0)
+            {
+                ResetLevel();
+            }
+        }
+
         private void GenerateLevel()
         {
             for (int y = 0; y < _lineData.Length; y++)
@@ -38,7 +47,6 @@ namespace Game
 
         private void DestroyLevel()
         {
-            _bricks = _brickMain.GetComponentsInChildren<Brick>(true);
             for (int i = 0; i < _bricks.Length; i++)
             {
                 Destroy(_bricks[i].gameObject);

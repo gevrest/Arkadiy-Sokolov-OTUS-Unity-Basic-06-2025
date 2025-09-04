@@ -17,14 +17,15 @@ namespace Game
 
         private void OnCollisionEnter(Collision other)
         {
-            if (_isKilling && other.collider.TryGetComponent(out Ball ball))
-            {
-                _audioController.PlayDeathSound();
-                _levelController.ResetLevel();
-            }
-            else
+            if (other.collider.TryGetComponent(out Ball ball))
             {
                 _audioController.PlayCollisionSound();
+
+                if (_isKilling)
+                {
+                    _audioController.PlayDeathSound();
+                    _levelController.ResetLevel();                    
+                }
             }
         }
     }
