@@ -16,7 +16,7 @@ namespace Game
 
         [SerializeField] private LineData[] _lineData;
 
-        public void GetDataByLines(out LineData[] lineData)
+        public void GetData(out LineData[] lineData)
         {
             lineData = _lineData;
         }

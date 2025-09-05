@@ -7,9 +7,11 @@ namespace Game
         [SerializeField] private MeshRenderer _renderer;
 
         private AudioController _audioController;
+        private LevelController _levelController;
 
         private void Start()
         {
+            _levelController = GetComponentInParent<LevelController>();
             _audioController = GetComponentInParent<AudioController>();
         }
 
@@ -23,6 +25,7 @@ namespace Game
             if (other.collider.TryGetComponent(out Ball ball))
             {
                 _audioController.PlayPopSound();
+                _levelController.CheckBricks();
                 Destroy(gameObject);
             }
         }

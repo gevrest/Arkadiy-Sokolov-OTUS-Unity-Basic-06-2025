@@ -16,21 +16,16 @@ namespace Game
         private Ball _ball;
         private float _lineDistance = -0.4f;
 
+        private void Awake()
+        {
+            _levelData.GetData(out _lineData);
+            GenerateLevel();
+        }
+
         private void Start()
         {
             _paddle = GetComponentInChildren<Paddle>();
             _ball = GetComponentInChildren<Ball>();
-            _levelData.GetDataByLines(out _lineData);
-            GenerateLevel();
-        }
-
-        private void Update()
-        {
-            _bricks = _brickMain.GetComponentsInChildren<Brick>(true);
-            if (_bricks.Length == 0)
-            {
-                ResetLevel();
-            }
         }
 
         private void GenerateLevel()
@@ -47,9 +42,19 @@ namespace Game
 
         private void DestroyLevel()
         {
+            _bricks = _brickMain.GetComponentsInChildren<Brick>(true);
             for (int i = 0; i < _bricks.Length; i++)
             {
                 Destroy(_bricks[i].gameObject);
+            }
+        }
+
+        public void CheckBricks()
+        {
+            _bricks = _brickMain.GetComponentsInChildren<Brick>(true);
+            if (_bricks.Length <= 1)
+            {
+                ResetLevel();
             }
         }
 
