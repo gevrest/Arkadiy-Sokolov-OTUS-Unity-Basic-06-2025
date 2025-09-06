@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3461b26bed64e8e46b5238b359daefe6
+guid: 0ed91a79e072bce4b80aee4cfd3ce362
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Optixal
+  - Unica77 LL Cyrillic
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
