@@ -5403,7 +5403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotSound: {fileID: 8300000, guid: b02ab038f4eda114c8d543b3d405a202, type: 3}
-  _volume: 0.5
+  _volume: 0.3
   _randomization: 0.1
 --- !u!1 &1540405068
 GameObject:
