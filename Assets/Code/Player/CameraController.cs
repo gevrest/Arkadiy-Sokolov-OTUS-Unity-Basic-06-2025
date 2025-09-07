@@ -17,6 +17,11 @@ namespace Game
 
         private void Update()
         {
+            if (Time.timeScale == 0f)
+            {
+                return;
+            }
+
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
 

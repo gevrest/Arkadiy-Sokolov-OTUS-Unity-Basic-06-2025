@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class WeaponAudioSource : MonoBehaviour
+    public sealed class WeaponAudioSource : MonoBehaviour
     {
         [SerializeField] private AudioClip _shotSound;
         [Range(0f, 1f)]

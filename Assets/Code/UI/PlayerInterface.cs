@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public class PlayerInterface : MonoBehaviour
+    public sealed class PlayerInterface : MonoBehaviour
     {
         [SerializeField] private PauseMenu _pauseMenu;
 
@@ -10,7 +10,7 @@ namespace Game
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                _pauseMenu.ToggleActive();
+                _pauseMenu.TogglePause();
             }
         }
     }

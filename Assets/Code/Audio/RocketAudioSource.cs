@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class RocketAudioSource : MonoBehaviour
+    public sealed class RocketAudioSource : MonoBehaviour
     {
         [SerializeField] private AudioClip _explosionSound;
         [Range(0.0f, 1.0f)]

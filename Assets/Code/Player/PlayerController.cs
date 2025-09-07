@@ -21,6 +21,11 @@ namespace Game
 
         private void Update()
         {
+            if (Time.timeScale == 0f)
+            {
+                return;
+            }
+
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 

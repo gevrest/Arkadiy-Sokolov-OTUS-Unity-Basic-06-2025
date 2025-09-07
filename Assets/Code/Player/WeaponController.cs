@@ -16,6 +16,11 @@ namespace Game
 
         private void Update()
         {
+            if (Time.timeScale == 0f)
+            {
+                return;
+            }
+
             float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
             if (scrollWheel >= 0.1f)
