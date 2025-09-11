@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Game
 {
     public sealed class PauseMenu : MonoBehaviour
     {
-        [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _resumeButton;
+        [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _menuButton;
         [SerializeField] private Button _quitButton;
 
@@ -47,7 +48,10 @@ namespace Game
 
         private void BackToMenu()
         {
-
+            SceneManager.LoadScene("MainMenu");
+            ResumeGame();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         private void PauseGame()
