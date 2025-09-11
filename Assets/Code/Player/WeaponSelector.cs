@@ -7,10 +7,12 @@ namespace Game
         private readonly Weapon[] _weapons;
         private int _currentIndex = 0;
         private Weapon _currentWeapon;
+        private AmmoDisplay _ammoDisplay;
 
-        public WeaponSelector(Weapon[] weapons)
+        public WeaponSelector(Weapon[] weapons, AmmoDisplay ammoDisplay)
         {
             _weapons = weapons;
+            _ammoDisplay = ammoDisplay;
             for (int i = 0; i < _weapons.Length; i++)
             {
                 Weapon weapon = _weapons[i];
@@ -62,6 +64,11 @@ namespace Game
             {
                 release.ReleaseTrigger();
             }
+        }
+
+        public void SetAmmoText()
+        {
+            _ammoDisplay.SetText(_currentWeapon.Ammo.ToString());
         }
     }
 }

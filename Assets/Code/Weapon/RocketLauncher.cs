@@ -33,6 +33,7 @@ namespace Game
             {
                 _rocket.Strike(_barrel.forward * _force, _barrel.position);
                 _rocket = null;
+                Ammo = 0;
                 _audioSource.PlayShotSound();
             }
         }
@@ -43,6 +44,7 @@ namespace Game
             {
                 _rocket = Instantiate(_rocketPrefab, _barrel.position, _barrel.rotation, _barrel);
                 _rocket.Sleep();
+                Ammo = 1;
             }
         }
     }

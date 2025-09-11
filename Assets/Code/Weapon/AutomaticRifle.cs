@@ -8,7 +8,6 @@ namespace Game
         [SerializeField] private Transform _shootPoint;
         [SerializeField] private AutomaticRifleData _weaponData;
         [SerializeField] private int _level = 1;
-        [SerializeField] private int _ammo;
 
         #region
         private int _maxAmmo;
@@ -51,7 +50,7 @@ namespace Game
                 return;
             }
 
-            if (_ammo > 0)
+            if (Ammo > 0)
             {
                 if (Physics.Raycast(_shootPoint.position, _shootPoint.forward, out var hitInfo))
                 {
@@ -60,7 +59,7 @@ namespace Game
                         healthComponent.DealDamage(_damage);
                     }
                 }
-                _ammo -= 1;
+                Ammo -= 1;
                 _lastShootTime = 0f;
 
                 _audioSource.PlayShotSound();
@@ -69,7 +68,7 @@ namespace Game
 
         public void Reload()
         {
-            _ammo = _maxAmmo;
+            Ammo = _maxAmmo;
         }
     }
 }

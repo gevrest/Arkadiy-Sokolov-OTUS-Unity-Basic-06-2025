@@ -3865,6 +3865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce894edff15d3646b6ac7f8f7ffa7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ammoDisplay: {fileID: 1080173355}
 --- !u!1 &966943047
 GameObject:
   m_ObjectHideFlags: 0
@@ -4225,7 +4226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0097f43b496244945a99697cb722c3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoText: {fileID: 1120330157}
+  _ammoText: {fileID: 0}
 --- !u!1 &1120330155
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,7 +6182,6 @@ MonoBehaviour:
   _shootPoint: {fileID: 2109679511}
   _weaponData: {fileID: 11400000, guid: c1840c1166225f24aa8adf8b49f2b568, type: 2}
   _level: 3
-  _ammo: 30
 --- !u!1 &1518048053
 GameObject:
   m_ObjectHideFlags: 0
@@ -11056,7 +11056,6 @@ MonoBehaviour:
   _weaponData: {fileID: 11400000, guid: 43f2a13c1ac2f984faf0b823655d9bcb, type: 2}
   _level: 3
   _shootDelay: 0.3
-  _ammo: 15
 --- !u!114 &4288206581763204092
 MonoBehaviour:
   m_ObjectHideFlags: 0

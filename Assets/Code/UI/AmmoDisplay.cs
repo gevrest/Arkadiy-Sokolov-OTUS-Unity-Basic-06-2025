@@ -5,7 +5,12 @@ namespace Game
 {
     public sealed class AmmoDisplay : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _ammoText;
+        private TMP_Text _ammoText;
+
+        private void Start()
+        {
+            _ammoText = GetComponentInChildren<TMP_Text>();
+        }
 
         public void SetText(string ammo)
         {

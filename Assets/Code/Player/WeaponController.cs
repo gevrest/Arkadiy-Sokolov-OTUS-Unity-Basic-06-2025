@@ -4,12 +4,13 @@ namespace Game
 {
     public class WeaponController : MonoBehaviour
     {
+        [SerializeField] private AmmoDisplay _ammoDisplay;
         private WeaponSelector _weaponSelector;
 
         private void Start()
         {
             Weapon[] weapons = GetComponentsInChildren<Weapon>(true);
-            _weaponSelector = new WeaponSelector(weapons);
+            _weaponSelector = new WeaponSelector(weapons, _ammoDisplay);
 
             _weaponSelector.SelectWeapon();
         }
@@ -20,6 +21,8 @@ namespace Game
             {
                 return;
             }
+
+            _weaponSelector.SetAmmoText();
 
             float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
