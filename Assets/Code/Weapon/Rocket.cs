@@ -12,14 +12,14 @@ namespace Game
         private Rigidbody _rigidbody;
         private MeshRenderer _renderer;
         private CapsuleCollider _collider;
-        private RocketAudioSource _audioSource;
+        private RocketAudioController _audioController;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _renderer = GetComponent<MeshRenderer>();
             _collider = GetComponent<CapsuleCollider>();
-            _audioSource = GetComponent<RocketAudioSource>();
+            _audioController = GetComponent<RocketAudioController>();
         }
 
         private IEnumerator Start()
@@ -33,7 +33,7 @@ namespace Game
             var explosion = gameObject.AddComponent<Explosion>();
             explosion.Detonate(transform.position, _explosionRadius, _explosionForce, _damage);
             Disable();
-            _audioSource.PlayExplosionSound();
+            _audioController.PlayExplosionSound();
         }
 
         public void Strike(Vector3 path, Vector3 startPosition)

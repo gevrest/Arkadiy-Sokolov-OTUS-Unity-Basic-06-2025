@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public sealed class PlayerAudioSource : MonoBehaviour
+    public sealed class PlayerAudioController : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _stepSound;

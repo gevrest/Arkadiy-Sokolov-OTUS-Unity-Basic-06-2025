@@ -11,12 +11,12 @@ namespace Game
 
         private Vector3 _velocity;
         private CharacterController _controller;
-        private PlayerAudioSource _audioSource;
+        private PlayerAudioController _audioController;
 
         private void Start()
         {
             _controller = GetComponent<CharacterController>();
-            _audioSource = GetComponent<PlayerAudioSource>();
+            _audioController = GetComponent<PlayerAudioController>();
         }
 
         private void Update()
@@ -33,12 +33,12 @@ namespace Game
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 moveDirection *= (_sprintSpeed);
-                _audioSource.SwitchToSprint();
+                _audioController.SwitchToSprint();
             }
             else
             {
                 moveDirection *= (_moveSpeed);
-                _audioSource.SwitchToWalk();
+                _audioController.SwitchToWalk();
             }
 
             _velocity.y += _gravity * Time.deltaTime;

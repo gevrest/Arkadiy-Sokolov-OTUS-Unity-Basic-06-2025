@@ -6,6 +6,8 @@ namespace Game
 {
     public sealed class PauseMenu : MonoBehaviour
     {
+        [SerializeField] private Settings _settings;
+        [Space(10)]
         [SerializeField] private Button _resumeButton;
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _menuButton;
@@ -43,7 +45,7 @@ namespace Game
 
         private void OpenSettings()
         {
-
+            _settings.ToggleSettings();
         }
 
         private void BackToMenu()

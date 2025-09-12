@@ -16,14 +16,14 @@ namespace Game
         #endregion
 
         private PistolUpgradeData _upgradeData;
-        private WeaponAudioSource _audioSource;
+        private WeaponAudioController _audioController;
         private float _lastShootTime;
         private bool _released;        
         private bool _canShoot;
 
         private void Start()
         {
-            _audioSource = GetComponent<WeaponAudioSource>();
+            _audioController = GetComponent<WeaponAudioController>();
 
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
             {
@@ -64,7 +64,7 @@ namespace Game
                 _released = false;
                 _lastShootTime = 0f;
 
-                _audioSource.PlayShotSound();
+                _audioController.PlayShotSound();
             }
         }
 

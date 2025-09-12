@@ -13,12 +13,12 @@ namespace Game
         private float _force;
 
         private ExplosiveUpgradeData _upgradeData;
-        private WeaponAudioSource _audioSource;
+        private WeaponAudioController _audioController;
         private Rocket _rocket;
 
         private void Start()
         {
-            _audioSource = GetComponent<WeaponAudioSource>();
+            _audioController = GetComponent<WeaponAudioController>();
 
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
             {
@@ -34,7 +34,7 @@ namespace Game
                 _rocket.Strike(_barrel.forward * _force, _barrel.position);
                 _rocket = null;
                 Ammo = 0;
-                _audioSource.PlayShotSound();
+                _audioController.PlayShotSound();
             }
         }
 

@@ -68,7 +68,14 @@ namespace Game
 
         public void SetAmmoText()
         {
-            _ammoDisplay.SetText(_currentWeapon.Ammo.ToString());
+            if (_currentWeapon.Ammo != 0)
+            {
+                _ammoDisplay.SetText(_currentWeapon.Ammo.ToString());
+            }
+            else
+            {
+                _ammoDisplay.SetText("-");
+            }            
         }
     }
 }
