@@ -5,7 +5,6 @@ namespace Game
 {
     public sealed class AutomaticRifle : Weapon, IReloadable
     {
-        [SerializeField] private Transform _shootPoint;
         [SerializeField] private AutomaticRifleData _weaponData;
         [SerializeField] private int _level = 1;
 
@@ -17,11 +16,13 @@ namespace Game
 
         private ARUpgradeData _upgradeData;
         private WeaponAudioController _audioController;
+        private Transform _shootPoint;
         private float _lastShootTime;
         private bool _canShoot;
 
         private void Start()
         {
+            _shootPoint = Camera.main.transform;
             _audioController = GetComponent<WeaponAudioController>();
 
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))

@@ -5,7 +5,6 @@ namespace Game
 {
     public class Melee : Weapon
     {
-        [SerializeField] private Transform _attackPosition;
         [SerializeField] private MeleeData _weaponData;
         [SerializeField] private int _level = 1;
 
@@ -17,11 +16,13 @@ namespace Game
 
         private MeleeUpgradeData _upgradeData;
         private WeaponAudioController _audioController;
+        private Transform _attackPoint;
         private float _lastAttackTime;
         private bool _canAttack;
 
         private void Start()
         {
+            _attackPoint = Camera.main.transform;
             _audioController = GetComponent<WeaponAudioController>();
 
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
@@ -49,7 +50,7 @@ namespace Game
                 return;
             }
 
-            if (Physics.Raycast(_attackPosition.position, _attackPosition.forward, out var hitInfo, _attackDistance))
+            if (Physics.Raycast(_attackPoint.position, _attackPoint.forward, out var hitInfo, _attackDistance))
             {
                 if (hitInfo.collider.TryGetComponent(out HealthComponent healthComponent))
                 {

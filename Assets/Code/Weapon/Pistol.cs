@@ -5,7 +5,6 @@ namespace Game
 {
     public sealed class Pistol : Weapon, IReloadable, IReleasable
     {
-        [SerializeField] private Transform _shootPosition;
         [SerializeField] private PistolData _weaponData;
         [SerializeField] private int _level = 1;
         [SerializeField] private float _shootDelay;
@@ -17,12 +16,14 @@ namespace Game
 
         private PistolUpgradeData _upgradeData;
         private WeaponAudioController _audioController;
+        private Transform _shootPoint;
         private float _lastShootTime;
         private bool _released;        
         private bool _canShoot;
 
         private void Start()
         {
+            _shootPoint = Camera.main.transform;
             _audioController = GetComponent<WeaponAudioController>();
 
             if (_weaponData.TryGetDataByLevel(_level, out _upgradeData))
@@ -53,7 +54,7 @@ namespace Game
 
             if (Ammo > 0)
             {
-                if (Physics.Raycast(_shootPosition.position, _shootPosition.forward, out var hitInfo))
+                if (Physics.Raycast(_shootPoint.position, _shootPoint.forward, out var hitInfo))
                 {
                     if (hitInfo.collider.TryGetComponent(out HealthComponent healthComponent))
                     {

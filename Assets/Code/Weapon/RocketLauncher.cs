@@ -5,10 +5,10 @@ namespace Game
 {
     public sealed class RocketLauncher : Weapon, IReloadable
     {
-        [SerializeField] private Transform _barrel;
-        [SerializeField] private Rocket _rocketPrefab;
         [SerializeField] private ExplosiveData _weaponData;
         [SerializeField] private int _level = 1;
+        [SerializeField] private Transform _barrel;
+        [SerializeField] private Rocket _rocketPrefab;
 
         private float _force;
 
