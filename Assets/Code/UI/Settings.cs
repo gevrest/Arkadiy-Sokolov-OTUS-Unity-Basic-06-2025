@@ -49,8 +49,9 @@ namespace Game
 
             for (int i = 0; i < _resolutions.Length; i++)
             {
-                string option = _resolutions[i].width + "x" + _resolutions[i].height;
+                string option = _resolutions[i].width + "x" + _resolutions[i].height + " " + _resolutions[i].refreshRate + "Hz";
                 options.Add(option);
+
                 if (_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
                 {
                     currentResolutionIndex = i;
@@ -107,9 +108,9 @@ namespace Game
                 _resolutionDropdown.value = currentResolutionIndex;
 
             if (PlayerPrefs.HasKey("FullscreenPreference"))
-                Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+                _fullscreenToggle.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
             else
-                Screen.fullScreen = true;
+                _fullscreenToggle.isOn = true;
 
             if (PlayerPrefs.HasKey("SoundsVolumePreference"))
                 _soundsVolumeSlider.value = PlayerPrefs.GetFloat("SoundsVolumePreference");
