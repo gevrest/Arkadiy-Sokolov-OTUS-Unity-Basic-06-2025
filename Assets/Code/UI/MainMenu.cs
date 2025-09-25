@@ -6,6 +6,8 @@ namespace Game
 {
     public sealed class MainMenu : MonoBehaviour
     {
+        [SerializeField] private Settings _settings;
+        [Space(10f)]
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _quitButton;
@@ -31,7 +33,7 @@ namespace Game
 
         private void OpenSettings()
         {
-
+            _settings.ToggleSettings();
         }
 
         private void QuitGame()

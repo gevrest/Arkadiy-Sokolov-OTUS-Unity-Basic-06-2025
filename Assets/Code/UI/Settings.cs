@@ -99,7 +99,7 @@ namespace Game
             if (PlayerPrefs.HasKey("QualitySettingPreference"))
                 _qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
             else
-                _qualityDropdown.value = 3;
+                _qualityDropdown.value = 5;
 
             if (PlayerPrefs.HasKey("ResolutionPreference"))
                 _resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
