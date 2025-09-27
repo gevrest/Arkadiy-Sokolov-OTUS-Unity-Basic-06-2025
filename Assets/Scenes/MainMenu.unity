@@ -4050,6 +4050,7 @@ MonoBehaviour:
   _fullscreenToggle: {fileID: 1924613855}
   _soundsVolumeSlider: {fileID: 169045686}
   _audioMixer: {fileID: 24100000, guid: 8e68db9d55715e04f8852c1be638f798, type: 2}
+  _defaultSettingsData: {fileID: 11400000, guid: 25c49d6f4b0749e41b1dd070b85fd181, type: 2}
 --- !u!1 &1547146847
 GameObject:
   m_ObjectHideFlags: 0

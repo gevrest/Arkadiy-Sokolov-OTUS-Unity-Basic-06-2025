@@ -16,7 +16,11 @@ namespace Game
         [SerializeField] private Slider _soundsVolumeSlider;
         [Space(10f)]
         [SerializeField] private AudioMixer _audioMixer;
+        [Space(10f)]
+        [SerializeField] DefaultSettingsData _defaultSettingsData;
 
+        private int _defaultQualityLevel;
+        private bool _defaultFullscreen;
         private bool _isOpened = false;
         private Resolution[] _resolutions;
 
@@ -38,6 +42,12 @@ namespace Game
             _qualityDropdown.onValueChanged.RemoveListener(SetQuality);
             _fullscreenToggle.onValueChanged.RemoveListener(SetFullscreen);
             _soundsVolumeSlider.onValueChanged.RemoveListener(SetSoundsVolume);
+        }
+
+        private void Awake()
+        {
+            _defaultQualityLevel = _defaultSettingsData.QualityLevel;
+            _defaultFullscreen = _defaultSettingsData.Fullscreen;
         }
 
         private void Start()
@@ -100,7 +110,7 @@ namespace Game
             if (PlayerPrefs.HasKey("QualitySettingPreference"))
                 _qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
             else
-                _qualityDropdown.value = 5;
+                _qualityDropdown.value = _defaultQualityLevel;
 
             if (PlayerPrefs.HasKey("ResolutionPreference"))
                 _resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
@@ -110,7 +120,7 @@ namespace Game
             if (PlayerPrefs.HasKey("FullscreenPreference"))
                 _fullscreenToggle.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
             else
-                _fullscreenToggle.isOn = true;
+                _fullscreenToggle.isOn = _defaultFullscreen;
 
             if (PlayerPrefs.HasKey("SoundsVolumePreference"))
                 _soundsVolumeSlider.value = PlayerPrefs.GetFloat("SoundsVolumePreference");
