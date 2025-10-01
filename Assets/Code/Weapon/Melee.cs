@@ -8,7 +8,7 @@ namespace Game
         [SerializeField] private MeleeData _weaponData;
         [SerializeField] private int _level = 1;
 
-        #region
+        #region Upgradable properties
         private int _damage;
         private float _attackDistance;
         private float _attackCooldown;

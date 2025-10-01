@@ -8,7 +8,7 @@ namespace Game
         [SerializeField] private AutomaticRifleData _weaponData;
         [SerializeField] private int _level = 1;
 
-        #region
+        #region Upgradable properties
         private int _maxAmmo;
         private int _damage;
         private float _shootDelay;

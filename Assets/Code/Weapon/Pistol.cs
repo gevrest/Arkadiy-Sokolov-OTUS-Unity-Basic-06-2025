@@ -9,7 +9,7 @@ namespace Game
         [SerializeField] private int _level = 1;
         [SerializeField] private float _shootDelay;
 
-        #region
+        #region Upgradable properties
         private int _maxAmmo;
         private int _damage;
         #endregion
