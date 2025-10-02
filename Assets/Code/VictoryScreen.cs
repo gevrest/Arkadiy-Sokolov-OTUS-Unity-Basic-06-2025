@@ -14,23 +14,24 @@ namespace Game
         [SerializeField] private Button _claimButton;
         [SerializeField] private Button _getButton;
         [Space(10f)]
-        [SerializeField] private float _showAnimationDuration = 1f;
+        [SerializeField] private float _animationDuration = 1f;
+        [SerializeField] private float _animationDelay = 1.5f;
 
         private IEnumerator Start()
         {
             _victoryScreen.gameObject.SetActive(true);
-            _victoryScreen.DOFade(1, _showAnimationDuration);
-            yield return new WaitForSeconds(_showAnimationDuration);
+            _victoryScreen.DOFade(1, _animationDuration);
+            yield return new WaitForSeconds(_animationDelay);
             _header.gameObject.SetActive(true);
-            _header.DOFade(1, _showAnimationDuration);
-            yield return new WaitForSeconds(_showAnimationDuration);
+            _header.DOFade(1, _animationDuration);
+            yield return new WaitForSeconds(_animationDelay);
             _rewards.SetActive(true);
             _rewards.transform.localScale = new Vector2(3, 3);
-            _rewards.transform.DOScale(1, _showAnimationDuration);
-            yield return new WaitForSeconds(_showAnimationDuration);
+            _rewards.transform.DOScale(1, _animationDuration);
+            yield return new WaitForSeconds(_animationDelay);
             _buttons.SetActive(true);
             _buttons.transform.localScale = new Vector2(0.5f, 0.5f);
-            _buttons.transform.DOScale(1, _showAnimationDuration);
+            _buttons.transform.DOScale(1, _animationDuration);
         }
 
         private void OnEnable()
@@ -57,8 +58,8 @@ namespace Game
 
         private IEnumerator Close()
         {
-            _victoryScreen.DOFade(0, _showAnimationDuration);
-            yield return new WaitForSeconds(_showAnimationDuration);
+            _victoryScreen.DOFade(0, _animationDuration);
+            yield return new WaitForSeconds(_animationDelay);
             _victoryScreen.gameObject.SetActive(false);
         }
     }
