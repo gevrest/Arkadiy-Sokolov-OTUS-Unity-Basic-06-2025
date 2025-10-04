@@ -10,11 +10,13 @@ namespace Game
         [SerializeField] private Renderer _renderer;
         [SerializeField] private EnemyResponseTrigger _responseTrigger;
         
+        private EnemySpawner _spawner;
         private Color _defaultColor;
 
         private void Start()
         {
             _defaultColor = _renderer.material.color;
+            _spawner = gameObject.GetComponentInParent<EnemySpawner>();
         }
 
         public override void DealDamage(int damage)
@@ -39,6 +41,7 @@ namespace Game
 
         protected override void Death()
         {
+            _spawner.DecreaseEnemy();
             Destroy(gameObject);
         }
     }

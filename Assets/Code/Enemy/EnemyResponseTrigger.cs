@@ -8,7 +8,7 @@ namespace Game
     public sealed class EnemyResponseTrigger : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent _enemy;
-        [SerializeField] private float _attackResponseTime = 5f;
+        [SerializeField] private float _chaseTime = 5f;
 
         private GameObject _player;
 
@@ -47,7 +47,7 @@ namespace Game
         public IEnumerator EnemyAttackedResponce()
         {
             EnemyAttacked = true;
-            yield return new WaitForSeconds(_attackResponseTime);
+            yield return new WaitForSeconds(_chaseTime);
             EnemyAttacked = false;
         }
     }

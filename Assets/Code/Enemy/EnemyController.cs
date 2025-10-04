@@ -7,10 +7,13 @@ namespace Game
     [RequireComponent (typeof (NavMeshAgent))]
     public sealed class EnemyController : MonoBehaviour
     {
+        [SerializeField] private int _maxPatrolRadius = 10;
+        [Space(10f)]
         [SerializeField] private float _defaultSpeed = 3f;
         [SerializeField] private float _chaseSpeed = 5f;
-        [SerializeField] private int _maxPatrolRadius = 10;
-        [SerializeField] private float _stopDuration = 15f;
+        [Space(10f)]
+        [SerializeField] private int _maxStopTime = 15;
+        [SerializeField] private int _minStopTime = 5;
         [Space(10f)]
         [SerializeField] private NavMeshAgent _enemy;
         [SerializeField] private EnemyResponseTrigger _responseTrigger;
@@ -21,7 +24,6 @@ namespace Game
         private void Start()
         {
             _defaultPosition = gameObject.transform.position;
-            Debug.Log($"Default Enemy Position - {_defaultPosition}");
             StartCoroutine(EnemyRoutine());
         }
 
@@ -41,11 +43,10 @@ namespace Game
         {
             while (true)
             {
-                Debug.Log("Enemy Routine");
-
                 _currentTarget = new Vector3(_defaultPosition.x += Random.Range(-_maxPatrolRadius, _maxPatrolRadius), 0, _defaultPosition.z += Random.Range(-_maxPatrolRadius, _maxPatrolRadius));
+                int currentStopTime = Random.Range(_minStopTime, _maxStopTime);
                 _enemy.destination = _currentTarget;
-                yield return new WaitForSeconds(_stopDuration);
+                yield return new WaitForSeconds(currentStopTime);
                 _enemy.destination = _defaultPosition;
             }
         }
