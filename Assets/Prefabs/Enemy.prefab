@@ -202,8 +202,8 @@ MonoBehaviour:
   _patrolRadius: 20
   _defaultSpeed: 3
   _chaseSpeed: 5
-  _maxStopTime: 10
-  _minStopTime: 5
+  _maxStopTime: 20
+  _minStopTime: 10
   _enemy: {fileID: 2057949355897036397}
   _responseTrigger: {fileID: 6169885234125977998}
 --- !u!114 &8651847558470872897
