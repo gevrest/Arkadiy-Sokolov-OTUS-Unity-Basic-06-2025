@@ -6,7 +6,8 @@ namespace Game
     public sealed class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private int _spawnRadius = 10;
-        [SerializeField] private int _enemyAmount = 3;
+        [SerializeField] private int _maxEnemyCount = 3;
+        [Space(10f)]
         [SerializeField] private int _maxSpawnCooldown = 15;
         [SerializeField] private int _minSpawnCooldown = 5;
         [Space(10f)]
@@ -28,7 +29,7 @@ namespace Game
                 _currentSpawnPoint = new Vector3(_spawner.position.x + Random.Range(-_spawnRadius, _spawnRadius), 0, _spawner.position.z + Random.Range(-_spawnRadius, _spawnRadius));
                 int currentSpawnCooldown = Random.Range(_minSpawnCooldown, _maxSpawnCooldown);
 
-                if (_enemyCount < _enemyAmount)
+                if (_enemyCount < _maxEnemyCount)
                 {
                     Spawn();
                 }

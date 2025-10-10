@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfc546932d15284690b8f41c826f0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 2057949355897036397}
   _chaseTime: 5
 --- !u!135 &5223901575675660506
 SphereCollider:
@@ -66,7 +65,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 15
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5671642880483903175
 GameObject:
@@ -200,10 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23770ca501cbd9b409313213b7ad2f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPatrolRadius: 10
+  _patrolRadius: 20
   _defaultSpeed: 3
   _chaseSpeed: 5
-  _maxStopTime: 20
+  _maxStopTime: 10
   _minStopTime: 5
   _enemy: {fileID: 2057949355897036397}
   _responseTrigger: {fileID: 6169885234125977998}

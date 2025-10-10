@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnRadius: 10
-  _enemyAmount: 5
+  _maxEnemyCount: 5
   _maxSpawnCooldown: 15
   _minSpawnCooldown: 5
   _enemyPrefab: {fileID: 7641340170176198127, guid: 1e11817ce4aa3b5499dbba2e7707cdd1, type: 3}

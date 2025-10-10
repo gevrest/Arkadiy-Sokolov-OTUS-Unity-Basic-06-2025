@@ -7,7 +7,7 @@ namespace Game
     [RequireComponent (typeof (NavMeshAgent))]
     public sealed class EnemyController : MonoBehaviour
     {
-        [SerializeField] private int _maxPatrolRadius = 10;
+        [SerializeField] private int _patrolRadius = 10;
         [Space(10f)]
         [SerializeField] private float _defaultSpeed = 3f;
         [SerializeField] private float _chaseSpeed = 5f;
@@ -18,11 +18,13 @@ namespace Game
         [SerializeField] private NavMeshAgent _enemy;
         [SerializeField] private EnemyResponseTrigger _responseTrigger;
 
+        private GameObject _player;
         private Vector3 _defaultPosition;
         private Vector3 _currentTarget;
 
         private void Start()
         {
+            _player = GameObject.Find("Player");
             _defaultPosition = gameObject.transform.position;
             StartCoroutine(EnemyRoutine());
         }
@@ -31,6 +33,7 @@ namespace Game
         {
             if (_responseTrigger.PlayerDetected || _responseTrigger.EnemyAttacked)
             {
+                _enemy.destination = _player.transform.position;
                 _enemy.speed = _chaseSpeed;
             }
             else
@@ -43,8 +46,10 @@ namespace Game
         {
             while (true)
             {
-                _currentTarget = new Vector3(_defaultPosition.x += Random.Range(-_maxPatrolRadius, _maxPatrolRadius), 0, _defaultPosition.z += Random.Range(-_maxPatrolRadius, _maxPatrolRadius));
+                _currentTarget = new Vector3(_defaultPosition.x += Random.Range(-_patrolRadius, _patrolRadius), 0, _defaultPosition.z += Random.Range(-_patrolRadius, _patrolRadius));
                 int currentStopTime = Random.Range(_minStopTime, _maxStopTime);
+
+                yield return new WaitForSeconds(currentStopTime);
                 _enemy.destination = _currentTarget;
                 yield return new WaitForSeconds(currentStopTime);
                 _enemy.destination = _defaultPosition;
