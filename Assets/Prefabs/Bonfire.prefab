@@ -3940,7 +3940,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4778,6 +4778,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5002,9 +5003,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5430202684073530552}
   - component: {fileID: 4134819658402185260}
+  - component: {fileID: 8532323703331002621}
   m_Layer: 0
   m_Name: Bonfire
-  m_TagString: Untagged
+  m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5041,8 +5043,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particleSystem: {fileID: 2103537394006054136}
-  _audioSource: {fileID: 2491744391917512882}
   _bonfireLight: {fileID: 2605454159874041699}
+  _audioSource: {fileID: 2491744391917512882}
+--- !u!64 &8532323703331002621
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398757596729085065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1030068964559603793, guid: 020590cff3431cf4382044ce1f56e72b, type: 3}
 --- !u!1 &6427984117073998108
 GameObject:
   m_ObjectHideFlags: 0
@@ -5159,7 +5183,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5212,7 +5236,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5266,7 +5290,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.19607843}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6351,7 +6375,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.9189378, b: 0.70440245, a: 1}
+        key0: {r: 1, g: 0.78431374, b: 0.3529412, a: 0.29411766}
         key1: {r: 1, g: 1, b: 1, a: 0.039215688}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6522,11 +6546,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 4
-    tilesY: 4
+    tilesX: 12
+    tilesY: 7
     animationType: 0
     rowIndex: 0
-    cycles: 3
+    cycles: 2
     uvChannelMask: -1
     rowMode: 1
     sprites:
@@ -9820,7 +9844,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46c03bc38e3c1fa498be9071aa8280ce, type: 2}
+  - {fileID: 2100000, guid: 6b3540e8433967541a502a1cf7dfd61a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9845,7 +9869,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

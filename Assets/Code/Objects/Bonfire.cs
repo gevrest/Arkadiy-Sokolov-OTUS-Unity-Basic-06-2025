@@ -5,12 +5,12 @@ namespace Game
     public sealed class Bonfire : MonoBehaviour
     {
         [SerializeField] private ParticleSystem _particleSystem;
-        [SerializeField] private AudioSource _audioSource;
         [SerializeField] private Light _bonfireLight;
+        [SerializeField] private AudioSource _audioSource;
 
         private void Start()
         {
-            Kindle();
+            _audioSource.Stop();
         }
 
         public void Kindle()

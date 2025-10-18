@@ -199,6 +199,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45734}
   m_CullTransparentMesh: 1
+--- !u!1001 &10140300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398757596729085065, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
+      propertyPath: m_Name
+      value: Bonfire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
 --- !u!1 &97666262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,14 +2423,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 871879185}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &747598337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,10 +2814,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963194228}
-  - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
+  - component: {fileID: 963194227}
+  - component: {fileID: 963194226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2871,6 +2933,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ammoDisplay: {fileID: 1080173355}
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fe5961427a00743adfd2321ba2afc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDistance: 3
+  _rayPoint: {fileID: 963194228}
 --- !u!1 &1033141320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,67 +3680,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089111109}
   m_CullTransparentMesh: 1
---- !u!1001 &1101231121
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430202684073530552, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6398757596729085065, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
-      propertyPath: m_Name
-      value: Bonfire
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5e7774b98125c8d48a2429b7779db629, type: 3}
 --- !u!1 &1106434926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,7 +4892,7 @@ GameObject:
   - component: {fileID: 1531285593}
   - component: {fileID: 1531285594}
   - component: {fileID: 1531285595}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6973,7 +6988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2012262691}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -7368,7 +7383,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7436,7 +7451,7 @@ GameObject:
   - component: {fileID: 3426023123150945972}
   - component: {fileID: 5465985925111593264}
   - component: {fileID: 4232363704669946490}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: empty cartridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7704,7 +7719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2671814713169858147}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Empty.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7752,7 +7767,7 @@ GameObject:
   - component: {fileID: 283883440767705965}
   - component: {fileID: 7301109874539159398}
   - component: {fileID: 8231438721157608595}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs slide release
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7770,7 +7785,7 @@ GameObject:
   - component: {fileID: 3474840867100830658}
   - component: {fileID: 7927912432864420117}
   - component: {fileID: 595784725996000453}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 front piston
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7788,7 +7803,7 @@ GameObject:
   - component: {fileID: 543450652280991564}
   - component: {fileID: 3469287838345240809}
   - component: {fileID: 1711813854351479843}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7806,7 +7821,7 @@ GameObject:
   - component: {fileID: 543450653148401878}
   - component: {fileID: 1483507220}
   - component: {fileID: 919132148675185261}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: AK-107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7839,7 +7854,7 @@ GameObject:
   - component: {fileID: 543450653237408706}
   - component: {fileID: 1204026675}
   - component: {fileID: 919132149517068665}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: M79-Osa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7939,7 +7954,7 @@ GameObject:
   - component: {fileID: 926282662136720257}
   - component: {fileID: 3866464915485630439}
   - component: {fileID: 4893750680266972307}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 muzzle brake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7955,7 +7970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3714156318429399190}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 3back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7971,7 +7986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8347894775252816558}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 2left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8129,7 +8144,7 @@ GameObject:
   - component: {fileID: 8833708594467673215}
   - component: {fileID: 5645100451407187026}
   - component: {fileID: 6412562353738425791}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs trigga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8147,7 +8162,7 @@ GameObject:
   - component: {fileID: 6594631755713258262}
   - component: {fileID: 4775155574155142341}
   - component: {fileID: 1535912782438631852}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8223,7 +8238,7 @@ GameObject:
   - component: {fileID: 8893949690532522046}
   - component: {fileID: 1410474707552568298}
   - component: {fileID: 7494293428705746368}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 stock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8241,7 +8256,7 @@ GameObject:
   - component: {fileID: 2976681633135885944}
   - component: {fileID: 8026384302335358465}
   - component: {fileID: 3473734064496443453}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8309,7 +8324,7 @@ GameObject:
   - component: {fileID: 2558623513335070208}
   - component: {fileID: 4417675880628348331}
   - component: {fileID: 2203408958514028612}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: trigga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8365,7 +8380,7 @@ GameObject:
   - component: {fileID: 6141670595526106993}
   - component: {fileID: 2236228240396868894}
   - component: {fileID: 4521992272950629297}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs safety
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8705,7 +8720,7 @@ GameObject:
   - component: {fileID: 6209968791096593850}
   - component: {fileID: 1907230418405893606}
   - component: {fileID: 3420036787896858847}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: cn-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8766,7 +8781,7 @@ GameObject:
   - component: {fileID: 3515364649808476480}
   - component: {fileID: 4288206581763204091}
   - component: {fileID: 4288206581763204092}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Beretta-92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8814,7 +8829,7 @@ GameObject:
   - component: {fileID: 8765975743636181817}
   - component: {fileID: 7396093522157822677}
   - component: {fileID: 8660100656012107099}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 54539 ak74 mag 30rnd empty (polyamide)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8928,7 +8943,7 @@ GameObject:
   - component: {fileID: 4988851013092109793}
   - component: {fileID: 4724126512090932724}
   - component: {fileID: 1903342390079901864}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 trigga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8996,7 +9011,7 @@ GameObject:
   - component: {fileID: 845979707001134451}
   - component: {fileID: 4943099437385032059}
   - component: {fileID: 7667914682485265513}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 back spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9087,7 +9102,7 @@ GameObject:
   - component: {fileID: 49543594533196349}
   - component: {fileID: 1093841087383747051}
   - component: {fileID: 383067660224143798}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs grips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9113,7 +9128,7 @@ GameObject:
   - component: {fileID: 3811332318135003909}
   - component: {fileID: 589032038480939400}
   - component: {fileID: 9148289592789504778}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 mag release
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9184,7 +9199,7 @@ GameObject:
   - component: {fileID: 4454700782795023329}
   - component: {fileID: 2782656695036529457}
   - component: {fileID: 1600268439777293322}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs 15rnd empty mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9259,7 +9274,7 @@ GameObject:
   - component: {fileID: 3279824745295825216}
   - component: {fileID: 3124148487897355365}
   - component: {fileID: 1121248488745122390}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9298,7 +9313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740402211965073417}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 1right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9316,7 +9331,7 @@ GameObject:
   - component: {fileID: 6800944077867108054}
   - component: {fileID: 6993611774414836282}
   - component: {fileID: 3827225195775923483}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9358,7 +9373,7 @@ GameObject:
   - component: {fileID: 739959630667524726}
   - component: {fileID: 8299105517535856883}
   - component: {fileID: 3065685647493587872}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 bolt carrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9467,7 +9482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12232417602986077}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 4front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9543,7 +9558,7 @@ GameObject:
   - component: {fileID: 9214651388911690534}
   - component: {fileID: 3138356483775328212}
   - component: {fileID: 484445350531965685}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak107 selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9574,7 +9589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4854382967311221567}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 5rozriz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9592,7 +9607,7 @@ GameObject:
   - component: {fileID: 5058019414536791156}
   - component: {fileID: 7270435801913995479}
   - component: {fileID: 5034394594927829379}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ak-107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9698,7 +9713,7 @@ GameObject:
   - component: {fileID: 70458340870959253}
   - component: {fileID: 1899023579490647823}
   - component: {fileID: 665720144798776131}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: 92fs hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
