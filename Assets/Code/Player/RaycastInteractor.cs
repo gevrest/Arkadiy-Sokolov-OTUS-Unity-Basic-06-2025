@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public class RaycastInteractor : MonoBehaviour
+    public sealed class RaycastInteractor : MonoBehaviour
     {
         [SerializeField] private float _interactionDistance = 3f;
         [SerializeField] private Transform _rayPoint;
@@ -13,13 +13,18 @@ namespace Game
             {
                 if (hitInfo.collider.CompareTag("InteractableObject"))
                 {
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        if (hitInfo.collider.TryGetComponent(out Bonfire bonfire))
-                        {
-                            bonfire.Kindle();
-                        }
-                    }
+                    Interact(hitInfo.collider);
+                }
+            }
+        }
+
+        private void Interact(Collider collider)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (collider.TryGetComponent(out Bonfire bonfire))
+                {
+                    bonfire.Switch();
                 }
             }
         }
