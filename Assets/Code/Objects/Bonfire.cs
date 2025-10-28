@@ -4,6 +4,9 @@ namespace Game
 {
     public sealed class Bonfire : MonoBehaviour
     {
+        [SerializeField] private float _maxLightIntensity = 2.0f;
+        [SerializeField] private float _minLightIntensity = 0.0f;
+        [Space(10f)]
         [SerializeField] private ParticleSystem _particleSystem;
         [SerializeField] private Light _bonfireLight;
         [SerializeField] private AudioSource _audioSource;
@@ -31,7 +34,7 @@ namespace Game
         {
             _particleSystem.Play();
             _audioSource.Play();
-            _bonfireLight.intensity = 1;
+            _bonfireLight.intensity = _maxLightIntensity;
 
             isBurning = true;
         }
@@ -41,7 +44,7 @@ namespace Game
             _particleSystem.Stop();
             _particleSystem.Clear();
             _audioSource.Stop();
-            _bonfireLight.intensity = 0;
+            _bonfireLight.intensity = _minLightIntensity;
 
             isBurning = false;
         }

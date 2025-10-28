@@ -5042,6 +5042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d158df20b49f1042b951c4efc37f8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxLightIntensity: 1.5
+  _minLightIntensity: 0
   _particleSystem: {fileID: 2103537394006054136}
   _bonfireLight: {fileID: 2605454159874041699}
   _audioSource: {fileID: 2491744391917512882}
@@ -9981,7 +9983,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 2
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
