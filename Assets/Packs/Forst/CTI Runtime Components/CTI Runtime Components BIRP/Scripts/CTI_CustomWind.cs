@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace CTI {
 
 	[RequireComponent (typeof (WindZone))]
-	public class CTI_CustomWind : MonoBehaviour {
+	public sealed class CTI_CustomWind : MonoBehaviour {
 
 		private WindZone m_WindZone;
 
@@ -17,22 +16,27 @@ namespace CTI {
 	    private bool init = false;
 	    private int TerrainLODWindPID;
 
-	    void Init () {
+	    private void Init() 
+		{
 			m_WindZone = GetComponent<WindZone>();
 			TerrainLODWindPID = Shader.PropertyToID("_TerrainLODWind");
 		}
 
-		void OnValidate () {
-			Update ();
+		private void OnValidate() 
+		{
+			Update();
 		}
 		
-		void Update () {
-			if (!init) {
-				Init ();
+		private void Update()
+		{
+			if(!init)
+			{
+				Init();
 			}
 			WindDirection = this.transform.forward;
 
-			if(m_WindZone == null) {
+			if(m_WindZone == null)
+			{
 				m_WindZone = GetComponent<WindZone>();
 			}
 			WindStrength = m_WindZone.windMain * WindMultiplier;
