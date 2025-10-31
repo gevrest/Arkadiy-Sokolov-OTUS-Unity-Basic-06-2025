@@ -37,7 +37,7 @@ Material:
     m_Floats:
     - _AlphaLeak: 0.5
     - _AmbientTranslucency: 1
-    - _Cutoff: 0.5
+    - _Cutoff: 0.6
     - _EnableTransFade: 1
     - _NormalScale: 1
     - _OcclusionStrength: 1

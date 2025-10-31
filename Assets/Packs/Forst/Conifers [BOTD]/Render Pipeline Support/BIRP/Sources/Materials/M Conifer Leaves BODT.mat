@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - GEOM_TYPE_LEAF
+  - GEOM_TYPE_MESH
   - _EMISSION
   - _METALLICGLOSSMAP
   - _NORMALMAP
@@ -112,7 +113,7 @@ Material:
     - _EdgeFlutterInfluence: 0
     - _EnableAdvancedEdgeBending: 1
     - _EnableLeafTurbulence: 1
-    - _EnableShadowMap: 0
+    - _EnableShadowMap: 1
     - _EnableTransFade: 0
     - _FadeOutWind: 0
     - _GlossMapScale: 1
@@ -135,7 +136,7 @@ Material:
     - _SwapUVS: 0
     - _Tangents: 0
     - _TimeOffset: 0.25
-    - _TranslucencyStrength: 0.5
+    - _TranslucencyStrength: 0
     - _TumbleFrequency: 0.6
     - _TumbleStrength: 0.012
     - _UVSec: 0
