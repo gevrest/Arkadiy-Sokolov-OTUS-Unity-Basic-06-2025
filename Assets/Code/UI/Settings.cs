@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Game
 {
-    public sealed class Settings : MonoBehaviour
+    public sealed class Settings : UIElement
     {
         [SerializeField] private Button _closeButton;
         [SerializeField] private Button _saveButton;
@@ -21,7 +21,6 @@ namespace Game
 
         private int _defaultQualityLevel;
         private bool _defaultFullscreen;
-        private bool _isOpened = false;
         private Resolution[] _resolutions;
 
         private void OnEnable()
@@ -73,36 +72,13 @@ namespace Game
             LoadSettings(currentResolutionIndex);
         }
 
-        public void ToggleSettings()
-        {
-            if (!_isOpened)
-            {
-                Open();
-            }
-            else
-            {
-                Close();
-            }
-        }
-
-        private void Open()
-        {
-            gameObject.SetActive(true);
-            _isOpened = true;
-        }
-
-        private void Close()
-        {
-            gameObject.SetActive(false);
-            _isOpened = false;
-        }
-
         private void SaveSettings()
         {
             PlayerPrefs.SetInt("QualitySettingPreference", _qualityDropdown.value);
             PlayerPrefs.SetInt("ResolutionPreference", _resolutionDropdown.value);
             PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(Screen.fullScreen));
             PlayerPrefs.SetFloat("SoundsVolumePreference", _soundsVolumeSlider.value);
+            PlayerPrefs.Save();
         }
 
         private void LoadSettings(int currentResolutionIndex)

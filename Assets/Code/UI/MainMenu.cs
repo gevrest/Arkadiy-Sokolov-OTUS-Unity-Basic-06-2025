@@ -33,7 +33,7 @@ namespace Game
 
         private void OpenSettings()
         {
-            _settings.ToggleSettings();
+            _settings.Open();
         }
 
         private void QuitGame()
