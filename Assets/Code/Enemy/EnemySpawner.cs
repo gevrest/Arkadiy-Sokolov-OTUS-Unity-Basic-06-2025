@@ -14,7 +14,7 @@ namespace Game
         [SerializeField] private GameObject _enemyPrefab;
         [SerializeField] private Transform _spawner;
 
-        private int _enemyCount;
+        private int _enemyCount = 0;
         private Vector3 _currentSpawnPoint;
 
         private void Start()
@@ -26,7 +26,7 @@ namespace Game
         {
             while (true)
             {
-                _currentSpawnPoint = new Vector3(_spawner.position.x + Random.Range(-_spawnRadius, _spawnRadius), 0, _spawner.position.z + Random.Range(-_spawnRadius, _spawnRadius));
+                _currentSpawnPoint = new Vector3(_spawner.position.x + Random.Range(-_spawnRadius, _spawnRadius), _spawner.position.y, _spawner.position.z + Random.Range(-_spawnRadius, _spawnRadius));
                 int currentSpawnCooldown = Random.Range(_minSpawnCooldown, _maxSpawnCooldown);
 
                 if (_enemyCount < _maxEnemyCount)
@@ -39,8 +39,9 @@ namespace Game
 
         private void Spawn()
         {
-            Instantiate(_enemyPrefab, _currentSpawnPoint, _spawner.rotation, _spawner);
+            var enemy = Instantiate(_enemyPrefab, _currentSpawnPoint, _spawner.rotation, _spawner);
             _enemyCount++;
+            enemy.name = $"Enemy [{_enemyCount}]";
         }
 
         public void DecreaseEnemy()

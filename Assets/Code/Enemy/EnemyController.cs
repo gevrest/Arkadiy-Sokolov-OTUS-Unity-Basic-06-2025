@@ -46,7 +46,7 @@ namespace Game
         {
             while (true)
             {
-                _currentTarget = new Vector3(_defaultPosition.x + Random.Range(-_patrolRadius, _patrolRadius), 0, _defaultPosition.z + Random.Range(-_patrolRadius, _patrolRadius));
+                _currentTarget = new Vector3(_defaultPosition.x + Random.Range(-_patrolRadius, _patrolRadius), transform.position.y, _defaultPosition.z + Random.Range(-_patrolRadius, _patrolRadius));
                 int currentStopTime = Random.Range(_minStopTime, _maxStopTime);
 
                 yield return new WaitForSeconds(currentStopTime);
