@@ -50,7 +50,7 @@ namespace Game
             _gameSaver.GetSavedData(out _gameState);
             if (_gameState != null)
             {
-                _saveStatus = "Game Saved";
+                _saveStatus = "Game saved";
                 _saveDate = _gameState.SaveDate;
             }
             else
