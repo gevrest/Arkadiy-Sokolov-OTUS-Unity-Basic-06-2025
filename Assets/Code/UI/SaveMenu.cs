@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Game
@@ -9,14 +10,26 @@ namespace Game
         [SerializeField] private Button _closeButton;
         [SerializeField] private Button _saveButton;
         [SerializeField] private Button _deleteButton;
-        [SerializeField] private Image _saveImage;
         [SerializeField] private TMP_Text _saveStatusText;
         [SerializeField] private TMP_Text _saveDateText;
-        [Space(10f)]
-        [SerializeField] private Sprite _defaultSaveImage;
 
-        private bool _gameSaved;
+        public UnityAction SaveGameEvent;
+        public UnityAction DeleteSaveEvent;
+
+        private GameSaver _gameSaver;
+        private GameState _gameState;
+        private string _saveStatus;
         private string _saveDate;
+
+        private void Awake()
+        {
+            _gameSaver = GameObject.Find("SaveSystem").GetComponent<GameSaver>();
+        }
+
+        private void Start()
+        {
+            UpdateSaveInformation();
+        }
 
         private void OnEnable()
         {
@@ -32,14 +45,38 @@ namespace Game
             _deleteButton.onClick.RemoveListener(DeleteSave);
         }
 
+        private void GetSaveInformation()
+        {
+            _gameSaver.GetSavedData(out _gameState);
+            if (_gameState != null)
+            {
+                _saveStatus = "Game Saved";
+                _saveDate = _gameState.SaveDate;
+            }
+            else
+            {
+                _saveStatus = "Game not saved";
+                _saveDate = string.Empty;
+            }
+        }
+
+        private void UpdateSaveInformation()
+        {
+            GetSaveInformation();
+            _saveStatusText.text = _saveStatus;
+            _saveDateText.text = _saveDate;
+        }
+
         private void SaveGame()
         {
-
+            SaveGameEvent.Invoke();
+            UpdateSaveInformation();
         }
 
         private void DeleteSave()
         {
-
+            DeleteSaveEvent.Invoke();
+            UpdateSaveInformation();
         }
     }
 }

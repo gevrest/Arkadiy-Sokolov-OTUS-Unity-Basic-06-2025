@@ -18,14 +18,15 @@ namespace Game
         [SerializeField] private NavMeshAgent _enemy;
         [SerializeField] private EnemyResponseTrigger _responseTrigger;
 
+        public Vector3 DefaultPosition;
+
         private GameObject _player;
-        private Vector3 _defaultPosition;
         private Vector3 _currentTarget;
 
         private void Start()
         {
             _player = GameObject.Find("Player");
-            _defaultPosition = gameObject.transform.position;
+            DefaultPosition = gameObject.transform.position;
             StartCoroutine(EnemyRoutine());
         }
 
@@ -46,13 +47,13 @@ namespace Game
         {
             while (true)
             {
-                _currentTarget = new Vector3(_defaultPosition.x + Random.Range(-_patrolRadius, _patrolRadius), transform.position.y, _defaultPosition.z + Random.Range(-_patrolRadius, _patrolRadius));
+                _currentTarget = new Vector3(DefaultPosition.x + Random.Range(-_patrolRadius, _patrolRadius), transform.position.y, DefaultPosition.z + Random.Range(-_patrolRadius, _patrolRadius));
                 int currentStopTime = Random.Range(_minStopTime, _maxStopTime);
 
                 yield return new WaitForSeconds(currentStopTime);
                 _enemy.destination = _currentTarget;
                 yield return new WaitForSeconds(currentStopTime);
-                _enemy.destination = _defaultPosition;
+                _enemy.destination = DefaultPosition;
             }
         }
     }
