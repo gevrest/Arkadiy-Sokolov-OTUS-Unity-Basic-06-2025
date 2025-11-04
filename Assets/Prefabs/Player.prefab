@@ -1553,11 +1553,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6003942860018118845}
+  - component: {fileID: 1860216493011429811}
   - component: {fileID: 2355643327303874835}
   - component: {fileID: 3086142619539449699}
   - component: {fileID: 4192350276494208515}
   m_Layer: 6
-  m_Name: SaveImageCamera
+  m_Name: FootageCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,6 +1579,21 @@ Transform:
   m_Father: {fileID: 1491084432054131829}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860216493011429811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722377210304139855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3123107e57bb444b46f1450d0925a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2355643327303874835}
+  _renderTexture: {fileID: 8400000, guid: f4ae482b9414d0c40a9cd649d4a33710, type: 2}
+  _playerInterface: {fileID: 3836548790682386754}
 --- !u!20 &2355643327303874835
 Camera:
   m_ObjectHideFlags: 0
@@ -1619,8 +1635,8 @@ Camera:
     serializedVersion: 2
     m_Bits: 81
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetTexture: {fileID: 8400000, guid: f4ae482b9414d0c40a9cd649d4a33710, type: 2}
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -3619,11 +3635,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6347feb150d165542a066046320d0ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneCapture: {fileID: 1860216493011429811}
   _closeButton: {fileID: 7334855493367123758}
   _saveButton: {fileID: 7257557271037744987}
   _deleteButton: {fileID: 9151004155594168756}
+  _saveImage: {fileID: 3176754745794919881}
   _saveStatusText: {fileID: 7094560764307947198}
   _saveDateText: {fileID: 4096185685729021260}
+  _notSaveImage: {fileID: 21300000, guid: dfebf58e6c72aa947aa74653b76d946d, type: 3}
 --- !u!222 &8063759039243616507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3960,7 +3979,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.25
+  m_fontSize: 39.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4141,8 +4160,8 @@ RectTransform:
   m_Father: {fileID: 1047656306529558207}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.020000001, y: 0.021888884}
-  m_AnchorMax: {x: 0.18, y: 0.068}
+  m_AnchorMin: {x: 0.020000001, y: 0.02281481}
+  m_AnchorMax: {x: 0.18, y: 0.069000006}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4602,7 +4621,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.25
+  m_fontSize: 39.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8037,8 +8056,8 @@ RectTransform:
   m_Father: {fileID: 1047656306529558207}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22000001, y: 0.021888884}
-  m_AnchorMax: {x: 0.38000003, y: 0.068}
+  m_AnchorMin: {x: 0.22000001, y: 0.02281481}
+  m_AnchorMax: {x: 0.38000003, y: 0.069000006}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10069,7 +10088,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8399296692506012298}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 

@@ -34,7 +34,6 @@ namespace Game
             string json = JsonUtility.ToJson(_gameState);
             PlayerPrefs.SetString("GameSave", json);
             PlayerPrefs.Save();
-            Debug.Log(json);
         }
 
         private void DeleteSave()

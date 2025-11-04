@@ -7,19 +7,26 @@ namespace Game
 {
     public sealed class SaveMenu : UIElement
     {
+        [SerializeField] SceneCapture _sceneCapture;
+        [Space(10f)]
         [SerializeField] private Button _closeButton;
         [SerializeField] private Button _saveButton;
         [SerializeField] private Button _deleteButton;
+        [SerializeField] private Image _saveImage;
         [SerializeField] private TMP_Text _saveStatusText;
         [SerializeField] private TMP_Text _saveDateText;
+        [Space(10f)]
+        [SerializeField] private Sprite _notSaveImage;
 
         public UnityAction SaveGameEvent;
         public UnityAction DeleteSaveEvent;
 
         private GameSaver _gameSaver;
         private GameState _gameState;
+        private Sprite _saveSprite;
         private string _saveStatus;
         private string _saveDate;
+        private bool _isSaved;
 
         private void Awake()
         {
@@ -29,6 +36,7 @@ namespace Game
         private void Start()
         {
             UpdateSaveInformation();
+            LoadPicture();
         }
 
         private void OnEnable()
@@ -45,18 +53,37 @@ namespace Game
             _deleteButton.onClick.RemoveListener(DeleteSave);
         }
 
+        private void SaveGame()
+        {
+            SaveGameEvent.Invoke();
+            UpdateSaveInformation();
+            SavePicture();
+
+        }
+
+        private void DeleteSave()
+        {
+            DeleteSaveEvent.Invoke();
+            UpdateSaveInformation();
+            DeletePicture();
+        }
+
         private void GetSaveInformation()
         {
             _gameSaver.GetSavedData(out _gameState);
-            if (_gameState != null)
+            _isSaved = _gameState != null;
+
+            if (_isSaved)
             {
                 _saveStatus = "Game saved";
                 _saveDate = _gameState.SaveDate;
+                _saveSprite = null;
             }
             else
             {
                 _saveStatus = "Game not saved";
                 _saveDate = string.Empty;
+                _saveSprite = _notSaveImage;
             }
         }
 
@@ -65,18 +92,27 @@ namespace Game
             GetSaveInformation();
             _saveStatusText.text = _saveStatus;
             _saveDateText.text = _saveDate;
+            _saveImage.sprite = _saveSprite;
         }
 
-        private void SaveGame()
+        private void SavePicture()
         {
-            SaveGameEvent.Invoke();
-            UpdateSaveInformation();
+            _sceneCapture.TakeAndSavePicture(Application.persistentDataPath + "/SaveImage.png", out Texture2D image);
+            _saveImage.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f), 100.0f);
         }
 
-        private void DeleteSave()
+        private void LoadPicture()
         {
-            DeleteSaveEvent.Invoke();
-            UpdateSaveInformation();
+            if (_isSaved)
+            {
+                ImageSaver.LoadImage(Application.persistentDataPath + "/SaveImage.png", out Texture2D image);
+                _saveImage.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f), 100.0f);
+            }
+        }
+
+        private void DeletePicture()
+        {
+            ImageSaver.DeleteImage(Application.persistentDataPath + "/SaveImage.png");
         }
     }
 }
