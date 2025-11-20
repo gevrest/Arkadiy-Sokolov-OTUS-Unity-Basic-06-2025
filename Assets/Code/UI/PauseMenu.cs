@@ -35,7 +35,7 @@ namespace Game
             _quitButton.onClick.RemoveListener(QuitGame);
         }
 
-        public void TogglePause()
+        public void Toggle()
         {
             if (!isPaused)
             {

@@ -58,7 +58,8 @@ namespace Game
 
             for (int i = 0; i < _resolutions.Length; i++)
             {
-                string option = $"{_resolutions[i].width}x{_resolutions[i].height} {_resolutions[i].refreshRate}Hz";
+                int refreshRate = (int)Mathf.Ceil((float)_resolutions[i].refreshRateRatio.value);
+                string option = $"{_resolutions[i].width}x{_resolutions[i].height} {refreshRate}Hz";
                 options.Add(option);
 
                 if (_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
