@@ -30,7 +30,8 @@ namespace Game
 
             int width = Screen.width;
             int height = Screen.height;
-            _screenText.text = $" screen: {width}x{height}";
+            int refreshRate = (int)Mathf.Ceil((float)Screen.currentResolution.refreshRateRatio.value);
+            _screenText.text = $" screen: {width}x{height} {refreshRate}Hz";
         }
 
         public void Toggle()
