@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class WeaponController : MonoBehaviour
+    public class WeaponController : TickableObject
     {
         [SerializeField] private AmmoDisplay _ammoDisplay;
         private WeaponSelector _weaponSelector;
@@ -15,7 +15,7 @@ namespace Game
             _weaponSelector.SelectWeapon();
         }
 
-        private void Update()
+        public override void OnTick()
         {
             if (Time.timeScale == 0f)
             {

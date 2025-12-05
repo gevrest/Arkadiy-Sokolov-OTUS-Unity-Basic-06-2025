@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public sealed class PlayerAudioController : MonoBehaviour
+    public sealed class PlayerAudioController : TickableObject
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _stepSound;
@@ -23,7 +23,7 @@ namespace Game
             _playerController = GetComponent<PlayerController>();
         }
 
-        private void Update()
+        public override void OnTick()
         {
             if (_playerController.isSprinting)
             {

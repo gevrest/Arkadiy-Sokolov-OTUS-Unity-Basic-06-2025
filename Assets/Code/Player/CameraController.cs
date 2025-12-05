@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public sealed class CameraController : MonoBehaviour
+    public sealed class CameraController : TickableObject
     {
         [SerializeField] private float _sensitivity = 2.0f;
         [SerializeField] private float _maxYAngle = 80.0f;
@@ -15,7 +15,7 @@ namespace Game
             Cursor.visible = false;
         }
 
-        private void Update()
+        public override void OnTick()
         {
             if (Time.timeScale == 0f)
             {

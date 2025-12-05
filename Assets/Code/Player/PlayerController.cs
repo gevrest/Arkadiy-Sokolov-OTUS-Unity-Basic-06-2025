@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public sealed class PlayerController : MonoBehaviour
+    public sealed class PlayerController : TickableObject
     {
         [SerializeField] private float _moveSpeed = 5.0f;
         [SerializeField] private float _sprintSpeed = 10.0f;
@@ -27,7 +27,7 @@ namespace Game
             _oldPosition = transform.position;
         }
 
-        private void Update()
+        public override void OnTick()
         {
             if (Time.timeScale == 0f)
             {

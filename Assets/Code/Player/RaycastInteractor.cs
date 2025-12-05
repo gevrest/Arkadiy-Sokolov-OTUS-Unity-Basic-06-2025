@@ -2,12 +2,12 @@
 
 namespace Game
 {
-    public sealed class RaycastInteractor : MonoBehaviour
+    public sealed class RaycastInteractor : TickableObject
     {
         [SerializeField] private float _interactionDistance = 3f;
         [SerializeField] private Transform _rayPoint;
 
-        private void Update()
+        public override void OnTick()
         {
             if (Physics.Raycast(_rayPoint.position, _rayPoint.forward, out var hitInfo, _interactionDistance))
             {
