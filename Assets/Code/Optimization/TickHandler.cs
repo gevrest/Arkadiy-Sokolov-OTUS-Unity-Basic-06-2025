@@ -8,7 +8,7 @@ namespace Game
 
         private void Start()
         {
-            _tickableObjects = GetComponentsInChildren<TickableObject>();
+            _tickableObjects = FindObjectsByType<TickableObject>(FindObjectsSortMode.None);
         }
 
         private void Update()
