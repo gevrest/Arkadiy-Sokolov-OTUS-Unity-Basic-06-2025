@@ -5,7 +5,7 @@ using UnityEngine.AI;
 namespace Game
 {
     [RequireComponent (typeof (NavMeshAgent))]
-    public sealed class EnemyController : TickableObject
+    public sealed class EnemyController : MonoBehaviour
     {
         [SerializeField] private int _patrolRadius = 10;
         [Space(10f)]
@@ -30,7 +30,7 @@ namespace Game
             StartCoroutine(EnemyRoutine());
         }
 
-        public override void OnTick()
+        private void Update()
         {
             if (_responseTrigger.PlayerDetected || _responseTrigger.EnemyAttacked)
             {
