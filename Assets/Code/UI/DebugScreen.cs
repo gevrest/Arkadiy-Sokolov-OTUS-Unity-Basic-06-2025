@@ -17,6 +17,11 @@ namespace Game
 
         private bool _isOpened = false;
 
+        private void OnDisable()
+        {
+            ResetValues();
+        }
+
         private void Update()
         {
             _fps = (int)(1 / Time.unscaledDeltaTime);
@@ -32,6 +37,14 @@ namespace Game
             int height = Screen.height;
             int refreshRate = (int)Mathf.Ceil((float)Screen.currentResolution.refreshRateRatio.value);
             _screenText.text = $" screen: {width}x{height} {refreshRate}Hz";
+        }
+
+        private void ResetValues()
+        {
+            _fps = 0;
+            _maxFps = 0;
+            _minFps = int.MaxValue;
+            _frameGap = 0;
         }
 
         public void Toggle()
