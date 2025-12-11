@@ -4719,6 +4719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114260476038372579}
+  - component: {fileID: 5615815007168746165}
   - component: {fileID: 5615815007168746164}
   m_Layer: 8
   m_Name: RobotKyle
@@ -5147,7 +5148,7 @@ Animator:
   m_GameObject: {fileID: 3862277632416465533}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5158,6 +5159,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5615815007168746165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862277632416465533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2d02ad78f3c284a916e7aa35d8bd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5615815007168746164}
 --- !u!1 &5659221109762111642
 GameObject:
   m_ObjectHideFlags: 0
